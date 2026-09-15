@@ -1,76 +1,42 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "lenis/dist/lenis.css";
 
 @custom-variant dark (&:is(.dark *));
 
-/* MagnaQore brand palette (magnaqore.io) plus two product semantics:
-   route = the system, solutions, results, included; stop = problems, losses, not included. */
+/* Daylight paper for reading and numbers, night photography for the road, sodium amber
+   (the light of a highway at night) as the one accent. go = included / solved, stop = problem / not included. */
 @theme {
-  --color-ink: #0a1d2a;
-  --color-ink-deep: #05121c;
-  --color-ink-800: #10283a;
-  --color-ink-700: #16344a;
-  --color-ink-500: #2e5875;
-  --color-ink-300: #7fa0b8;
-  --color-ink-200: #b3c6d4;
-  --color-paper: #ffffff;
-  --color-paper-warm: #f7f6f3;
-  --color-paper-band: #f0eee9;
-  --color-brass: #c9962b;
-  --color-brass-bright: #e5b54a;
-  --color-brass-deep: #8c6414;
-  --color-brass-wash: #f6efdd;
-  --color-route: #1e6b52;
-  --color-route-bright: #6fc3a0;
-  --color-route-wash: #e4f0ea;
-  --color-stop: #b3261e;
-  --color-stop-bright: #f08a7e;
-  --color-stop-wash: #f8e7e5;
-  --color-on-ink-muted: #a9c0d0;
+  --color-paper: #f3f4f1;
+  --color-paper-deep: #e7e9e4;
+  --color-asphalt: #17191b;
+  --color-graphite: #5a5f63;
+  --color-concrete: #cdd0ca;
+  --color-night: #0a1119;
+  --color-night-raised: #111b25;
+  --color-night-line: #243241;
+  --color-fog: #aab4bd;
+  --color-sodium: #f4a53a;
+  --color-sodium-bright: #ffc46b;
+  --color-sodium-deep: #93570a;
+  --color-go: #1b6e4c;
+  --color-go-bright: #62d0a0;
+  --color-stop: #b8352a;
+  --color-stop-bright: #ff8b7b;
 
-  /* Chart marks (validated with the dataviz palette checker: CVD ΔE 9.9, contrast >= 3:1 on paper). */
-  --color-chart-ai: #1f9463;
-  --color-chart-human: #b3261e;
+  /* Two-series charts, validated with the dataviz palette checker for their surface. */
+  --color-chart-ai: #b86e0e;
+  --color-chart-human: #2f6db5;
+  --color-chart-ai-night: #c7831f;
+  --color-chart-human-night: #3b82d4;
 
-  --text-display: clamp(2.5rem, 1.1rem + 4.6vw, 5rem);
-  --text-display--line-height: 0.98;
-  --text-display--letter-spacing: -0.025em;
-  --text-headline: clamp(2rem, 1.3rem + 2.2vw, 3.25rem);
-  --text-headline--line-height: 1.04;
-  --text-headline--letter-spacing: -0.02em;
-  --text-title: clamp(1.25rem, 1.12rem + 0.45vw, 1.5rem);
-  --text-title--line-height: 1.22;
-  --text-title--letter-spacing: -0.01em;
-  --text-lead: clamp(1.1875rem, 1.06rem + 0.4vw, 1.375rem);
-  --text-lead--line-height: 1.5;
-  --text-statement: clamp(1.75rem, 1.15rem + 1.9vw, 2.75rem);
-  --text-statement--line-height: 1.14;
-  --text-statement--letter-spacing: -0.01em;
-  --text-figure: clamp(2.75rem, 1.9rem + 2.8vw, 4.5rem);
-  --text-figure--line-height: 0.95;
-  --text-figure--letter-spacing: -0.03em;
-
-  --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
-
-  /* Starts partly visible: fully transparent text would hold back Largest Contentful Paint. */
-  @keyframes rise {
-    from {
-      opacity: 0.35;
-      transform: translateY(0.85rem);
-    }
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
-  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: var(--font-mona), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-mona), ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -91,65 +57,105 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #10222f;
-  --card: #ffffff;
-  --card-foreground: #10222f;
-  --popover: #ffffff;
-  --popover-foreground: #10222f;
-  --primary: #0a1d2a;
-  --primary-foreground: #ffffff;
-  --secondary: #f0eee9;
-  --secondary-foreground: #10222f;
-  --muted: #f7f6f3;
-  --muted-foreground: #4d6373;
-  --accent: #f6efdd;
-  --accent-foreground: #8c6414;
-  --destructive: #b3261e;
-  --border: rgb(10 29 42 / 0.14);
-  --input: rgb(10 29 42 / 0.22);
-  --ring: #a87a1f;
-  --radius: 0.5rem;
+  --background: #f3f4f1;
+  --foreground: #17191b;
+  --card: #fafaf8;
+  --card-foreground: #17191b;
+  --popover: #fafaf8;
+  --popover-foreground: #17191b;
+  --primary: #f4a53a;
+  --primary-foreground: #17191b;
+  --secondary: #e7e9e4;
+  --secondary-foreground: #17191b;
+  --muted: #e7e9e4;
+  --muted-foreground: #5a5f63;
+  --accent: #e7e9e4;
+  --accent-foreground: #17191b;
+  --destructive: #b8352a;
+  --border: rgb(23 25 27 / 0.13);
+  --input: rgb(23 25 27 / 0.22);
+  --ring: #93570a;
+  --radius: 0.75rem;
+
+  /* Type scale (sizes only; weight and width come from the role classes in primitives.tsx). */
+  --text-hero: clamp(2.125rem, 1.2rem + 2.9vw, 4.5rem);
+  --text-hero--line-height: 0.98;
+  --text-hero--letter-spacing: -0.032em;
+  --text-display: clamp(2.375rem, 0.95rem + 4.6vw, 6.25rem);
+  --text-display--line-height: 0.94;
+  --text-display--letter-spacing: -0.038em;
+  --text-manifesto: clamp(2rem, 0.95rem + 3.2vw, 4.5rem);
+  --text-manifesto--line-height: 1.02;
+  --text-manifesto--letter-spacing: -0.032em;
+  --text-headline: clamp(1.875rem, 1.15rem + 2.3vw, 3.5rem);
+  --text-headline--line-height: 1;
+  --text-headline--letter-spacing: -0.028em;
+  --text-title: clamp(1.25rem, 1.12rem + 0.45vw, 1.625rem);
+  --text-title--line-height: 1.16;
+  --text-title--letter-spacing: -0.014em;
+  --text-lead: clamp(1.125rem, 1.04rem + 0.3vw, 1.375rem);
+  --text-lead--line-height: 1.5;
+  --text-statement: clamp(1.625rem, 0.95rem + 2.15vw, 3.25rem);
+  --text-statement--line-height: 1.1;
+  --text-statement--letter-spacing: -0.024em;
+  --text-figure: clamp(3.5rem, 2.1rem + 4.6vw, 7.5rem);
+  --text-figure--line-height: 0.84;
+  --text-figure--letter-spacing: -0.02em;
+
+  --header-height: 4.5rem;
+  --header-offset: var(--header-height);
 }
 
-/* Dark bands (header, hero, challenge index, pilot) swap the semantic tokens locally,
-   so shadcn components inside them pick the right colors without dark: overrides. */
+/* Night scenes swap the semantic tokens locally, so shadcn components inside pick the right colors. */
 @layer components {
   .surface-ink {
-    --background: #0a1d2a;
-    --foreground: #ffffff;
-    --card: #10283a;
-    --card-foreground: #ffffff;
-    --popover: #0a1d2a;
-    --popover-foreground: #ffffff;
-    --primary: #e5b54a;
-    --primary-foreground: #0a1d2a;
-    --secondary: #16344a;
-    --secondary-foreground: #ffffff;
-    --muted: #10283a;
-    --muted-foreground: #a9c0d0;
-    --accent: #16344a;
-    --accent-foreground: #e5b54a;
-    --border: rgb(255 255 255 / 0.16);
-    --input: rgb(255 255 255 / 0.24);
+    --background: #0a1119;
+    --foreground: #f3f4f1;
+    --card: #111b25;
+    --card-foreground: #f3f4f1;
+    --popover: #111b25;
+    --popover-foreground: #f3f4f1;
+    --primary: #f4a53a;
+    --primary-foreground: #17191b;
+    --secondary: #111b25;
+    --secondary-foreground: #f3f4f1;
+    --muted: #111b25;
+    --muted-foreground: #aab4bd;
+    --accent: #1a2632;
+    --accent-foreground: #f3f4f1;
+    --border: rgb(243 244 241 / 0.14);
+    --input: rgb(243 244 241 / 0.24);
+    --ring: #ffc46b;
     background-color: var(--background);
     color: var(--foreground);
   }
 }
 
 /* Type roles as their own utilities: class mergers read custom text-* names as colors and drop them. */
+@utility type-hero {
+  font-size: var(--text-hero);
+  line-height: var(--text-hero--line-height);
+  letter-spacing: var(--text-hero--letter-spacing);
+}
+
 @utility type-display {
   font-size: var(--text-display);
   line-height: var(--text-display--line-height);
   letter-spacing: var(--text-display--letter-spacing);
+}
+
+@utility type-manifesto {
+  font-size: var(--text-manifesto);
+  line-height: var(--text-manifesto--line-height);
+  letter-spacing: var(--text-manifesto--letter-spacing);
 }
 
 @utility type-headline {
@@ -181,9 +187,25 @@
   letter-spacing: var(--text-figure--letter-spacing);
 }
 
-/* Archivo's width axis: semi-expanded headlines read like freight signage. */
-@utility font-wide {
-  font-variation-settings: "wdth" 112;
+/* Mona Sans width axis. Named outside font-* so class merging never mistakes them for weights. */
+@utility stretch-75 {
+  font-stretch: 75%;
+}
+
+@utility stretch-88 {
+  font-stretch: 87.5%;
+}
+
+@utility stretch-100 {
+  font-stretch: 100%;
+}
+
+@utility stretch-112 {
+  font-stretch: 112.5%;
+}
+
+@utility stretch-125 {
+  font-stretch: 125%;
 }
 
 /* Reading progress without JavaScript: a scroll-driven animation where supported, hidden elsewhere. */
@@ -208,7 +230,7 @@
 
 @utility shell {
   width: 100%;
-  max-width: 88rem;
+  max-width: 96rem;
   margin-inline: auto;
   padding-inline: 1.25rem;
 
@@ -228,15 +250,19 @@
 
   html {
     @apply font-sans;
-    scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 6rem;
   }
 
   body {
     @apply bg-background text-foreground;
     font-size: 1.0625rem;
-    line-height: 1.65;
+    line-height: 1.6;
+    font-synthesis: none;
     text-rendering: optimizeLegibility;
+
+    @media (width >= 48rem) {
+      font-size: 1.125rem;
+    }
   }
 
   h1,
@@ -252,22 +278,30 @@
     text-wrap: pretty;
   }
 
+  /* Pictures are part of the scenes: no ghost image when a mouse drags across them (Firefox: ImageDragGuard). */
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  /* SplitText measures real line breaks; balancing would move words after the split. */
+  [data-split] {
+    text-wrap: wrap;
+  }
+
   ::selection {
-    background-color: var(--color-brass-bright);
-    color: var(--color-ink);
+    background-color: var(--color-sodium);
+    color: var(--color-asphalt);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-
     *,
     ::before,
     ::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 }

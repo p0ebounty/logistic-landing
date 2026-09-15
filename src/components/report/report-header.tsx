@@ -3,26 +3,28 @@ import Link from "next/link"
 import { ArrowLeftIcon } from "lucide-react"
 
 import mqMark from "@/assets/brand/mq-mark.png"
+import { SplitReveal } from "@/components/motion/split-reveal"
 import { BookingLink, typeRole } from "@/components/site/primitives"
 import { Button } from "@/components/ui/button"
 import { reportMeta, reportSections } from "@/content/example-report"
+import { cn } from "@/lib/utils"
 
 export function ReportHeader() {
   return (
     <>
       <header className="surface-ink border-b border-border">
-        <div className="shell flex h-16 items-center gap-3">
+        <div className="shell flex h-(--header-height) items-center gap-3">
           <Link
             href="/"
-            className="mr-auto flex items-center gap-2.5 rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring"
+            className="mr-auto flex items-center gap-2.5 rounded-full outline-none focus-visible:ring-3 focus-visible:ring-ring"
           >
             <Image src={mqMark} alt="" className="h-7 w-auto" preload />
-            <span className="flex items-baseline gap-1.5 whitespace-nowrap">
-              <span className="font-serif text-[1.35rem] leading-none">MagnaQore</span>
-              <span className="font-heading text-[0.95rem] font-semibold font-wide text-muted-foreground">Logistic</span>
+            <span className="flex items-baseline gap-1.5 font-heading whitespace-nowrap">
+              <span className="text-[1.15rem] leading-none font-bold stretch-112">MagnaQore</span>
+              <span className="text-[0.95rem] leading-none font-medium text-muted-foreground">Logistic</span>
             </span>
           </Link>
-          <Button asChild variant="ghost" size="lg" className="hidden md:inline-flex">
+          <Button asChild variant="ghost" size="lg" className="hidden rounded-full md:inline-flex">
             <Link href="/#analytics">
               <ArrowLeftIcon data-icon="inline-start" aria-hidden />
               Back to the landing
@@ -33,24 +35,23 @@ export function ReportHeader() {
       </header>
 
       <section id="top" aria-labelledby="report-title" className="surface-ink">
-        <div className="shell pt-14 pb-16 md:pt-20 md:pb-24">
-          <p className="text-on-ink-muted">Example report</p>
-          <h1 id="report-title" className={typeRole.display}>
+        <div className="shell pt-16 pb-16 md:pt-24 md:pb-24">
+          <p className="font-heading font-semibold text-sodium">Example report</p>
+          <SplitReveal as="h1" id="report-title" className={cn(typeRole.display, "mt-5 max-w-[17ch]")}>
             {reportMeta.title}
-          </h1>
-          <p className="mt-5 type-lead text-on-ink-muted">
+          </SplitReveal>
+          <p className="mt-6 type-lead text-muted-foreground">
             {reportMeta.client}. {reportMeta.period}.
           </p>
-          <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-border ring-1 ring-border lg:grid-cols-4">
+          <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 md:mt-20 lg:grid-cols-4 lg:gap-x-10">
             {reportMeta.headline.map((item, index) => (
-              <div key={item.label} className="flex flex-col gap-2 bg-ink-800 p-5 md:p-7">
-                <dt className="order-2 text-sm text-on-ink-muted md:text-base">{item.label}</dt>
+              <div key={item.label} className="flex flex-col border-t border-border pt-5">
+                <dt className="order-2 mt-3 leading-snug text-muted-foreground">{item.label}</dt>
                 <dd
-                  className={
-                    index === 0
-                      ? "order-1 font-heading text-[clamp(2rem,1.3rem+2.6vw,3.5rem)] leading-none font-extrabold font-wide text-brass-bright"
-                      : "order-1 font-heading text-[clamp(2rem,1.3rem+2.6vw,3.5rem)] leading-none font-extrabold font-wide"
-                  }
+                  className={cn(
+                    "order-1 font-heading text-[clamp(2.5rem,1.6rem+3vw,4.75rem)] leading-[0.86] font-[780] whitespace-nowrap stretch-75",
+                    index === 0 && "text-sodium"
+                  )}
                 >
                   {item.value}
                 </dd>
@@ -60,13 +61,13 @@ export function ReportHeader() {
         </div>
       </section>
 
-      <nav aria-label="Report sections" className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur">
+      <nav aria-label="Report sections" className="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur-md">
         <ul className="shell flex gap-1 overflow-x-auto py-2">
           {reportSections.map((section) => (
             <li key={section.id} className="shrink-0">
               <a
                 href={`#${section.id}`}
-                className="block rounded-md px-3 py-2 text-[0.95rem] font-medium text-muted-foreground outline-none hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
+                className="block rounded-full px-4 py-2 text-[0.95rem] font-medium text-muted-foreground outline-none hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
               >
                 {section.label}
               </a>

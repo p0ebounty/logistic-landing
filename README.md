@@ -4,7 +4,7 @@ Landing page for MagnaQore Logistic, the AI sales department for US and Canadian
 
 ## Stack
 
-Next.js 16 (App Router, Turbopack) · React 19 · Tailwind CSS 4 · shadcn/ui on Radix · yet-another-react-lightbox (loaded on demand) · react-lite-youtube-embed.
+Next.js 16 (App Router, Turbopack) · React 19 · Tailwind CSS 4 · shadcn/ui on Radix · GSAP (ScrollTrigger, SplitText, `@gsap/react`) · Lenis · yet-another-react-lightbox (loaded on demand) · react-lite-youtube-embed. Type: Mona Sans (variable width and weight).
 
 ## Commands
 
@@ -30,7 +30,9 @@ Also generated: `/opengraph-image` and `/example-report/opengraph-image`, `/site
 |------|------|
 | `src/content/landing.ts` | Every piece of landing copy, table and link (booking URL, video) |
 | `src/content/example-report.ts` | All figures of the example report |
-| `src/components/site/` | Landing sections |
+| `src/components/site/` | Landing sections; `*-scene.tsx` are their scroll scenes |
+| `src/components/motion/` | Reusable motion: smooth scroll, headline reveal, opening media, focus list, horizontal track, card stack |
+| `src/lib/gsap.ts` | GSAP with its plugins registered; `MOTION` / `WIDE` media queries |
 | `src/components/report/` | Report sections and charts |
 | `src/components/ui/` | shadcn/ui components (Radix base) |
 | `src/lib/structured-data.ts` | JSON-LD (Organization, WebSite, Service with offers, VideoObject, BreadcrumbList, Report) |

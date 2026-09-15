@@ -13,7 +13,7 @@ export function ReportSection({
   id: string
   title: string
   lead?: string
-  tone?: "paper" | "warm"
+  tone?: "paper" | "deep"
   children: React.ReactNode
 }) {
   return (
@@ -42,7 +42,7 @@ export function StatTiles({ items, className }: { items: Tile[]; className?: str
   return (
     <dl
       className={cn(
-        "grid grid-cols-1 gap-px overflow-hidden rounded-xl bg-border ring-1 ring-border sm:grid-cols-2",
+        "grid grid-cols-1 gap-px overflow-hidden rounded-[1.25rem] bg-border ring-1 ring-border sm:grid-cols-2",
         items.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4",
         className
       )}
@@ -77,7 +77,7 @@ export function FigureList({
       {normalized.map((row) => (
         <div key={row.label} className="flex items-baseline justify-between gap-6 border-b border-border py-3">
           <dt>{row.label}</dt>
-          <dd className="text-right font-semibold tabular-nums">{row.value}</dd>
+          <dd className="text-right font-semibold">{row.value}</dd>
         </div>
       ))}
       {total ? (
@@ -95,7 +95,7 @@ export function Note({ children, tone = "neutral" }: { children: React.ReactNode
     <p
       className={cn(
         "rounded-lg px-5 py-4 text-[0.95rem]",
-        tone === "stop" ? "bg-stop-wash text-ink" : "bg-paper-band text-ink"
+        tone === "stop" ? "bg-stop/10 text-asphalt" : "bg-paper-deep text-asphalt"
       )}
     >
       {children}
@@ -119,11 +119,11 @@ export function ReportTable({
 }) {
   const numeric = (index: number) => index >= 2
   return (
-    <div className="relative overflow-x-auto rounded-xl ring-1 ring-border">
+    <div className="relative overflow-x-auto rounded-[1.25rem] ring-1 ring-border">
       <table className="w-full border-collapse bg-background text-[0.95rem]" style={{ minWidth }}>
         <caption className="sr-only">{caption}</caption>
         <thead>
-          <tr className="border-b-2 border-ink">
+          <tr className="border-b-2 border-asphalt">
             {columns.map((column, index) => (
               <th
                 key={column}
@@ -152,7 +152,7 @@ export function ReportTable({
                     key={index}
                     className={cn(
                       "px-4 py-3.5",
-                      numeric(index) ? "text-right whitespace-nowrap tabular-nums" : "text-muted-foreground",
+                      numeric(index) ? "text-right whitespace-nowrap" : "text-muted-foreground",
                       index === row.length - 1 && "font-semibold text-foreground"
                     )}
                   >
@@ -165,10 +165,10 @@ export function ReportTable({
         </tbody>
         {total ? (
           <tfoot>
-            <tr className="border-t-2 border-ink bg-paper-warm">
+            <tr className="border-t-2 border-asphalt bg-paper-deep">
               {total.map((cell, index) =>
                 index === 0 ? (
-                  <th key={index} scope="row" className="sticky left-0 z-10 bg-paper-warm px-4 py-4 text-left font-bold">
+                  <th key={index} scope="row" className="sticky left-0 z-10 bg-paper-deep px-4 py-4 text-left font-bold">
                     {cell}
                   </th>
                 ) : (
@@ -176,7 +176,7 @@ export function ReportTable({
                     key={index}
                     className={cn(
                       "px-4 py-4 font-bold",
-                      numeric(index) && "text-right whitespace-nowrap tabular-nums",
+                      numeric(index) && "text-right whitespace-nowrap",
                       index === total.length - 1 && "font-heading text-lg text-stop"
                     )}
                   >

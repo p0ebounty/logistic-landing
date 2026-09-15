@@ -32,42 +32,44 @@ Ground truth text: `docs/old-site-content.txt`. Check with `node scripts/content
 
 ## Design system
 
-**Concept — "Interchange".** A good interchange takes traffic from every direction and sends each car down the right lane without a collision; MagnaQore Logistic does the same with leads. The page inherits the MagnaQore brand (magnaqore.io: ink navy, brass, paper, Archivo + Newsreader, MQ logo) and adds the vernacular of North American freight roads: night aerial highway photography and road-sign semantics.
+**Concept — "Night shift".** Freight moves all night, and so does an AI sales department. The page is calm daylight paper for reading, numbers and decisions, and cuts to night photography of the road wherever it shows scale. The reader's scroll drives the motion: the page is a sequence of scenes rather than a stack of fade-ins. The first version (magnaqore.io colors and fonts, editorial layout) was rejected as unimpressive; this direction is deliberately its own.
 
-**Color** (brand tokens + two product semantics)
+**Color**
 
 | Token | Hex | Role |
 |-------|-----|------|
-| Ink | `#0A1D2A` | dark bands, header, primary surfaces for hero/pilot |
-| Paper / Paper warm / Band | `#FFFFFF` / `#F7F6F3` / `#F0EEE9` | reading surfaces |
-| Brass bright / Brass / Brass deep | `#E5B54A` / `#C9962B` / `#8C6414` | CTA, attention, emphasis text on light (deep only) |
-| Route green | `#1E6B52` | the system, solutions, results, included |
-| Stop red | `#B3261E` | problems, losses, human-department cost, not included |
-| Text / Muted | `#10222F` / `#4D6373` | copy |
+| Paper / Paper deep | `#F3F4F1` / `#E7E9E4` | reading surfaces, bands |
+| Asphalt / Graphite | `#17191B` / `#5A5F63` | text, secondary text |
+| Night / Night raised / Fog | `#0A1119` / `#111B25` / `#AAB4BD` | night scenes (`.surface-ink`) and their secondary text |
+| Sodium / Sodium deep | `#F4A53A` / `#93570A` | the one accent: CTA fill, key figures on night; deep for accent text on paper |
+| Go / Stop | `#1B6E4C` / `#B8352A` | included, solved / problem, not included (always with an icon or bar marker) |
+| Chart AI / Human | `#B86E0E` / `#2F6DB5` on paper, `#C7831F` / `#3B82D4` on night | two-series charts, validated with the dataviz palette checker |
 
-**Type.** Archivo (variable width + weight) carries the product voice: semi-expanded heavy headlines like freight signage, regular width for body. Newsreader (brand serif) only for a few editorial statements. Sentence case everywhere, no all-caps labels, tabular figures in tables.
+**Type.** Mona Sans only, with its width axis as the second voice: expanded (`stretch-125`) headlines like trailer lettering, condensed (`stretch-75`) big figures like mile-marker numerals, normal width for reading. Sizes come from the `type-*` utilities. Sentence case, no all-caps labels, no tabular figures on Mona Sans numbers (its tabular zero is slashed) except live counters.
 
-**Layout.** Left-aligned long-form on a 1280 px shell with brand gutters (20/40/64 px); 68ch measure. Long chapters use a sticky left heading column with content on the right. Sticky ink header with section nav and a brass reading-progress line; mobile nav in a Sheet.
+**Layout.** Left-aligned on a 96rem shell (20/40/64 px gutters). A fixed header hides while reading down and returns on scroll up; sticky elements use `--header-offset`. Mobile nav in a Sheet.
 
 ```
 [header: logo · Challenges · AI vs human · Pricing · Packages · Why MagnaQore · Pilot · Book a call]
-HERO   ink + aerial interchange photo; headline left; CTA + watch overview
-       one green guide-sign band with the 4 stats (the single bold moment)
-OVERVIEW  thesis (serif) | video · approach · specialization · 30-day facts
-WHO      8 pains with red warning markers · brass "Important" callout
-CHALLENGES ×5  sticky heading | problem (red) → system (green) → results; photos + product shots
-AI VS HUMAN / PRICING  typeset tables, AI column green, human column red
-SERVICES  6 services, 2 columns
-PACKAGES  matrix table on desktop, package tabs on mobile; vs in-house matrix
-WHY      7 reasons + result
-PILOT    ink + dawn highway photo; tired-of list, pilot offer, CTA
+HERO        paper with a giant "30" cut out of it over the night interchange; headline, standfirst, CTAs
+            scroll → fly into the zero until the road fills the screen → 4 stats rise over the photo
+OVERVIEW    thesis · video window opening on scroll · principles · 5 facts in condensed numerals · result + CTA
+WHO         sticky heading | 8 pains read like a teleprompter, sodium marker follows the reader · "Important"
+CHALLENGES  giant headline + chapter links; 5 chapters: text left | sticky frame right where a wipe with a thin
+            sodium edge line swaps the photo for product screens
+AI VS HUMAN pinned night race for the same 2,000 contacts (11.5 h vs 1,166.7 h) · three metric tables
+PRICING     agent price list | night card with the human department cost
+SERVICES    night, pinned horizontal track of 6 services + lead gen screen
+PACKAGES    bundle matrix with a header that follows the reader (tabs on phones) · vs in-house matrix
+WHY         7 reasons as sticky cards that pile up · night result card
+PILOT       the dawn highway opens from a window to full screen under the question · offer · CTA · sign-off
 ```
 
-**Principles.** Spend boldness once (hero photo + sign band); everything else quiet and disciplined. Structure encodes meaning: red = problem/loss, green = system/result, numbers only for real sequences (the 7-step call flow). Motion only for the hero load and user actions; respects reduced motion. Every table readable on a 360 px phone.
+**Motion.** GSAP (ScrollTrigger, SplitText, `useGSAP`) with Lenis smooth scrolling on the GSAP ticker; the official GSAP skills and the cinematic motion skill live in `.claude/skills`. Scenes are client wrappers (`src/components/motion`, `src/components/site/*-scene.tsx`) around server-rendered markup that already holds the final state, so SSR, crawlers, no-JS (a noscript style hides `data-scene-runway`) and reduced motion all get complete content. Reduced motion: no smooth scroll, no pins or scrubs. Phones keep the vertical versions (no horizontal track or card stack, product screens inline). Headlines reveal by masked lines once; nothing else fades in for its own sake.
 
 ## Generated imagery (kie.ai, gpt-image-2-5-flare)
 
-`scripts/image-prompts.mjs` → `node scripts/generate-images.mjs` → `node scripts/optimize-images.mjs` (WebP into `public/images`).
+`scripts/image-prompts.mjs` → `node scripts/generate-images.mjs` → `node scripts/optimize-images.mjs` (WebP into `src/assets/images`).
 
 - `hero-interchange` (21:9 4K) and `hero-interchange-portrait` (2:3) — night aerial stack interchange, brass light trails.
 - `challenge-leads` — distribution center docks, three lit (priority).

@@ -1,22 +1,16 @@
 import type { Metadata, Viewport } from "next"
-import { Archivo, Newsreader } from "next/font/google"
+import { Mona_Sans } from "next/font/google"
 
+import { SmoothScroll } from "@/components/motion/smooth-scroll"
+import { ImageDragGuard } from "@/components/site/image-drag-guard"
 import { SITE_URL } from "@/content/landing"
-import { cn } from "@/lib/utils"
 import "./globals.css"
 
-const archivo = Archivo({
+// One family, two voices through the width axis: expanded like trailer lettering, condensed like mile-marker numerals.
+const monaSans = Mona_Sans({
   subsets: ["latin"],
   axes: ["wdth"],
-  variable: "--font-archivo",
-})
-
-// Editorial accents only, so it is not preloaded: keeps the first paint's font budget for Archivo.
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  axes: ["opsz"],
-  variable: "--font-newsreader",
-  preload: false,
+  variable: "--font-mona",
 })
 
 const title = "AI Sales Department for Logistics in 30 Days | MagnaQore"
@@ -59,13 +53,17 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0a1d2a",
+  themeColor: "#f3f4f1",
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cn(archivo.variable, newsreader.variable)}>
-      <body className="min-h-dvh antialiased">{children}</body>
+    <html lang="en" className={monaSans.variable}>
+      <body className="min-h-dvh antialiased">
+        <SmoothScroll />
+        <ImageDragGuard />
+        {children}
+      </body>
     </html>
   )
 }

@@ -11,7 +11,7 @@ const alertVariants = cva(
         destructive:
           "bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
         warning:
-          "gap-1 border-brass/45 bg-brass-wash px-5 py-5 text-ink has-[>svg]:gap-x-4 md:px-7 md:py-6 *:[svg]:text-brass-deep *:[svg:not([class*='size-'])]:size-6 *:data-[slot=alert-title]:font-heading *:data-[slot=alert-title]:text-base *:data-[slot=alert-title]:font-semibold *:data-[slot=alert-title]:text-brass-deep *:data-[slot=alert-description]:font-heading *:data-[slot=alert-description]:type-title *:data-[slot=alert-description]:font-semibold *:data-[slot=alert-description]:text-ink",
+          "gap-1 border-sodium/45 bg-sodium/10 px-5 py-5 text-asphalt has-[>svg]:gap-x-4 md:px-7 md:py-6 *:[svg]:text-sodium-deep *:[svg:not([class*='size-'])]:size-6 *:data-[slot=alert-title]:font-heading *:data-[slot=alert-title]:text-base *:data-[slot=alert-title]:font-semibold *:data-[slot=alert-title]:text-sodium-deep *:data-[slot=alert-description]:font-heading *:data-[slot=alert-description]:type-title *:data-[slot=alert-description]:font-semibold *:data-[slot=alert-description]:text-asphalt",
       },
     },
     defaultVariants: {

@@ -1,16 +1,18 @@
+import { SplitReveal } from "@/components/motion/split-reveal"
 import { PlanMatrix } from "@/components/site/plan-matrix"
 import { BookingLink, Section, typeRole } from "@/components/site/primitives"
 import { bundles, inHouseColumn, plans, versusInHouse } from "@/content/landing"
+import { cn } from "@/lib/utils"
 
 export function Packages() {
   return (
     <>
-      <Section id="packages" tone="warm" aria-labelledby="packages-title">
+      <Section id="packages" aria-labelledby="packages-title">
         <div className="shell">
-          <h2 id="packages-title" className={typeRole.headline}>
+          <SplitReveal as="h2" id="packages-title" className={cn(typeRole.display, "max-w-[14ch]")}>
             {bundles.title}
-          </h2>
-          <div className="mt-12">
+          </SplitReveal>
+          <div className="mt-14 md:mt-20">
             <PlanMatrix
               caption={bundles.title}
               rowHeader={bundles.rowHeader}
@@ -19,25 +21,25 @@ export function Packages() {
               recommendedLabel={bundles.recommendedLabel}
             />
           </div>
-          <div className="mt-12">
+          <div className="mt-14">
             <BookingLink />
           </div>
         </div>
       </Section>
 
-      <Section id="vs-in-house" aria-labelledby="vs-in-house-title">
+      <Section id="vs-in-house" tone="deep" aria-labelledby="vs-in-house-title">
         <div className="shell">
-          <h2 id="vs-in-house-title" className={typeRole.headline}>
+          <SplitReveal as="h2" id="vs-in-house-title" className={cn(typeRole.headline, "max-w-[20ch]")}>
             {versusInHouse.title}
-          </h2>
-          <div className="mt-12">
+          </SplitReveal>
+          <div className="mt-12 md:mt-16">
             <PlanMatrix
               caption={versusInHouse.title}
               rowHeader={versusInHouse.rowHeader}
               columns={[...plans, { ...inHouseColumn, inHouse: true }]}
               groups={[{ rows: versusInHouse.rows }]}
               recommendedLabel={bundles.recommendedLabel}
-              surfaceClassName="bg-background"
+              surfaceClassName="bg-paper-deep"
             />
           </div>
         </div>
