@@ -1,37 +1,48 @@
-import { TriangleAlertIcon } from "lucide-react"
-
+import { FocusList } from "@/components/motion/focus-list"
+import { SplitReveal } from "@/components/motion/split-reveal"
 import { Section, typeRole } from "@/components/site/primitives"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { audience } from "@/content/landing"
+import { cn } from "@/lib/utils"
 
 export function Audience() {
   return (
-    <Section id="who-its-for" tone="warm" aria-labelledby="audience-title">
-      <div className="shell grid gap-x-16 gap-y-12 lg:grid-cols-12">
+    <Section id="who-its-for" tone="deep" aria-labelledby="audience-title">
+      <div className="shell grid gap-x-16 gap-y-14 lg:grid-cols-12">
         <header className="lg:col-span-4">
-          <h2 id="audience-title" className={typeRole.headline}>
-            {audience.title}
-          </h2>
-          <p className="mt-4 type-lead text-muted-foreground">{audience.intro}</p>
+          <div className="lg:sticky lg:top-[calc(var(--header-height)+3rem)]">
+            <SplitReveal as="h2" id="audience-title" className={typeRole.headline}>
+              {audience.title}
+            </SplitReveal>
+            <p className="mt-5 type-lead text-graphite">{audience.intro}</p>
+          </div>
         </header>
 
-        <ul className="grid gap-x-10 sm:grid-cols-2 lg:col-span-8">
-          {audience.pains.map((pain) => (
-            <li key={pain.title} className="flex gap-4 border-t border-border py-6">
-              <span aria-hidden className="mt-[0.55em] size-2.5 shrink-0 rotate-45 bg-stop" />
-              <div>
-                <h3 className="font-heading text-lg leading-snug font-semibold">{pain.title}</h3>
-                <p className="mt-1.5 text-muted-foreground">{pain.text}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="lg:col-span-8">
+          <FocusList>
+            <ul className="border-b border-border">
+              {audience.pains.map((pain) => (
+                <li
+                  key={pain.title}
+                  data-focus-item
+                  className="group/row grid gap-x-10 gap-y-2 border-t border-border py-7 transition-colors duration-500 md:grid-cols-2 md:py-9 in-data-reading:text-graphite in-data-reading:data-active:text-foreground"
+                >
+                  <h3 className="font-heading text-[clamp(1.4rem,1.1rem+0.95vw,2.125rem)] leading-[1.06] font-semibold tracking-[-0.02em] stretch-112">
+                    {pain.title}
+                  </h3>
+                  <p className="text-graphite md:pt-1.5">{pain.text}</p>
+                </li>
+              ))}
+            </ul>
+          </FocusList>
 
-        <Alert variant="warning" role="note" className="lg:col-span-8 lg:col-start-5">
-          <TriangleAlertIcon aria-hidden />
-          <AlertTitle>{audience.warning.title}</AlertTitle>
-          <AlertDescription>{audience.warning.text}</AlertDescription>
-        </Alert>
+          <p role="note" className="mt-16 flex flex-col gap-3 md:mt-20">
+            <span className="flex items-center gap-3 font-heading font-semibold text-stop">
+              <span aria-hidden className="h-0.5 w-8 bg-stop" />
+              {audience.warning.title}
+            </span>
+            <span className={cn(typeRole.statement, "max-w-[24ch]")}>{audience.warning.text}</span>
+          </p>
+        </div>
       </div>
     </Section>
   )

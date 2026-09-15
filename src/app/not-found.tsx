@@ -7,9 +7,9 @@ export default function NotFound() {
   return (
     <main className="surface-ink grid min-h-dvh place-items-center">
       <div className="shell py-24">
-        <p className="text-on-ink-muted">Error 404</p>
-        <h1 className={typeRole.display}>Page not found</h1>
-        <p className="mt-5 max-w-[46ch] type-lead text-on-ink-muted">
+        <p className="font-heading font-semibold text-sodium">Error 404</p>
+        <h1 className={`${typeRole.display} mt-4`}>Page not found</h1>
+        <p className="mt-6 max-w-[46ch] type-lead text-muted-foreground">
           This address does not exist. Everything about MagnaQore Logistic is on the main page.
         </p>
         <Button asChild size="xl" className="mt-9">

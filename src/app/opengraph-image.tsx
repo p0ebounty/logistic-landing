@@ -8,62 +8,93 @@ export const alt = "MagnaQore Logistic — an AI sales department for your logis
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
+const paper = "#f3f4f1"
+const asphalt = "#17191b"
+const graphite = "#5a5f63"
+const sodium = "#f4a53a"
+
+/** The hero in one frame: the headline on paper and the night interchange showing through a giant "30". */
 export default async function OpengraphImage() {
-  const [background, archivo] = await Promise.all([
-    readFile(join(process.cwd(), "assets/og/og-background.jpg")),
-    readFile(join(process.cwd(), "assets/og/Archivo-ExtraBold.ttf")),
+  const dir = join(process.cwd(), "assets/og")
+  const [background, expanded, condensed, medium] = await Promise.all([
+    readFile(join(dir, "og-background.jpg")),
+    readFile(join(dir, "MonaSans-ExpandedExtraBold.ttf")),
+    readFile(join(dir, "MonaSans-CondensedExtraBold.ttf")),
+    readFile(join(dir, "MonaSans-Medium.ttf")),
   ])
+  const photo = `data:image/jpeg;base64,${background.toString("base64")}`
+  const [leads, , , loss] = hero.stats
 
   return new ImageResponse(
     (
-      <div style={{ display: "flex", position: "relative", width: "100%", height: "100%", background: "#0a1d2a", fontFamily: "Archivo" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse renders plain img elements */}
-        <img
-          src={`data:image/jpeg;base64,${background.toString("base64")}`}
-          width={size.width}
-          height={size.height}
-          alt=""
-          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover" }}
-        />
+      <div style={{ display: "flex", position: "relative", width: "100%", height: "100%", background: paper }}>
         <div
           style={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "linear-gradient(90deg, #0a1d2a 22%, rgba(10,29,42,0.78) 52%, rgba(10,29,42,0.12) 100%)",
+            right: -70,
+            top: 40,
+            display: "flex",
+            fontFamily: "Mona Sans Expanded",
+            fontSize: 500,
+            lineHeight: 1,
+            letterSpacing: "-0.04em",
+            color: "transparent",
+            backgroundImage: `url(${photo})`,
+            backgroundSize: "780px 560px",
+            backgroundPosition: "0px 40px",
+            backgroundClip: "text",
           }}
-        />
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: "100%", padding: "60px 72px" }}>
-          <div style={{ display: "flex", fontSize: 30, color: "#a9c0d0" }}>MagnaQore Logistic</div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", maxWidth: 760, fontSize: 64, lineHeight: 1.02, letterSpacing: "-0.02em", color: "#ffffff" }}>
-              {hero.title}
-            </div>
-            <div style={{ display: "flex", marginTop: 36, borderRadius: 14, background: "#1e6b52", padding: 5, alignSelf: "flex-start" }}>
-              <div style={{ display: "flex", border: "2px solid rgba(255,255,255,0.9)", borderRadius: 10 }}>
-                {hero.stats.slice(0, 3).map((stat, index) => (
-                  <div
-                    key={stat.label}
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      padding: "14px 26px",
-                      borderLeft: index === 0 ? "none" : "2px solid rgba(255,255,255,0.9)",
-                      color: "#ffffff",
-                    }}
-                  >
-                    <div style={{ display: "flex", fontSize: 38, lineHeight: 1 }}>{stat.value}</div>
-                    <div style={{ display: "flex", fontSize: 18, marginTop: 6 }}>{stat.label}</div>
-                  </div>
-                ))}
+        >
+          30
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            width: 640,
+            height: "100%",
+            padding: "58px 0 58px 68px",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", fontFamily: "Mona Sans Medium", fontSize: 26, color: graphite }}>
+            <div style={{ display: "flex", width: 34, height: 5, marginRight: 14, background: sodium }} />
+            MagnaQore Logistic
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontFamily: "Mona Sans Expanded",
+              fontSize: 52,
+              lineHeight: 1.02,
+              letterSpacing: "-0.03em",
+              color: asphalt,
+            }}
+          >
+            {hero.title}
+          </div>
+          <div style={{ display: "flex" }}>
+            {[leads, loss].map((stat, index) => (
+              <div key={stat.label} style={{ display: "flex", flexDirection: "column", marginLeft: index === 0 ? 0 : 56 }}>
+                <div style={{ display: "flex", fontFamily: "Mona Sans Condensed", fontSize: 64, lineHeight: 0.9, color: asphalt }}>
+                  {stat.value}
+                </div>
+                <div style={{ display: "flex", fontFamily: "Mona Sans Medium", fontSize: 22, marginTop: 10, color: graphite }}>
+                  {stat.label}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     ),
-    { ...size, fonts: [{ name: "Archivo", data: archivo, weight: 800, style: "normal" }] }
+    {
+      ...size,
+      fonts: [
+        { name: "Mona Sans Expanded", data: expanded, weight: 800, style: "normal" },
+        { name: "Mona Sans Condensed", data: condensed, weight: 800, style: "normal" },
+        { name: "Mona Sans Medium", data: medium, weight: 500, style: "normal" },
+      ],
+    }
   )
 }

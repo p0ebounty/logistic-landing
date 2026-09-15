@@ -6,20 +6,20 @@ import { overview } from "@/content/landing"
 
 export function SiteFooter() {
   return (
-    <footer className="surface-ink border-t border-border bg-ink-deep">
-      <div className="shell flex flex-col gap-10 py-14 md:flex-row md:items-end md:justify-between">
+    <footer className="surface-ink border-t border-border">
+      <div className="shell flex flex-col gap-10 py-14 md:flex-row md:items-end md:justify-between md:py-16">
         <div>
           <a
             href="#top"
-            className="inline-flex items-center gap-2.5 rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring"
+            className="inline-flex items-center gap-2.5 rounded-full outline-none focus-visible:ring-3 focus-visible:ring-ring"
           >
             <Image src={mqMark} alt="" className="h-8 w-auto" />
-            <span className="flex items-baseline gap-1.5">
-              <span className="font-serif text-2xl leading-none">MagnaQore</span>
-              <span className="font-heading text-base font-semibold font-wide text-muted-foreground">Logistic</span>
+            <span className="flex items-baseline gap-1.5 font-heading">
+              <span className="text-xl leading-none font-bold stretch-112">MagnaQore</span>
+              <span className="text-base leading-none font-medium text-muted-foreground">Logistic</span>
             </span>
           </a>
-          <p className="mt-4 max-w-[42ch] text-muted-foreground">{overview.thesis}</p>
+          <p className="mt-5 max-w-[42ch] text-muted-foreground">{overview.thesis}</p>
         </div>
         <div className="flex flex-col items-start gap-5 md:items-end">
           <BookingLink />

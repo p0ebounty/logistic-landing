@@ -13,36 +13,36 @@ export function ReportSummary() {
     <ReportSection id="summary" title="Summary">
       <StatTiles items={kpis} />
 
-      <div className="surface-ink rounded-xl p-6 md:p-10">
+      <div className="surface-ink rounded-[1.25rem] p-6 md:p-10">
         <SubHeading>{budget.title}</SubHeading>
-        <p className="mt-2 text-on-ink-muted">{budget.basis}</p>
+        <p className="mt-2 text-muted-foreground">{budget.basis}</p>
         <dl className="mt-8 grid gap-8 md:grid-cols-3">
           <div className="flex flex-col gap-1">
-            <dt className="order-1 text-on-ink-muted">{budget.ai.label}</dt>
-            <dd className="order-2 font-heading text-4xl font-bold text-route-bright">{budget.ai.value}</dd>
-            <dd className="order-3 text-sm text-on-ink-muted">{budget.ai.formula}</dd>
+            <dt className="order-1 text-muted-foreground">{budget.ai.label}</dt>
+            <dd className="order-2 font-heading text-4xl font-bold text-go-bright">{budget.ai.value}</dd>
+            <dd className="order-3 text-sm text-muted-foreground">{budget.ai.formula}</dd>
           </div>
           <div className="flex flex-col gap-1">
-            <dt className="order-1 text-on-ink-muted">{budget.traditional.label}</dt>
+            <dt className="order-1 text-muted-foreground">{budget.traditional.label}</dt>
             <dd className="order-2 font-heading text-4xl font-bold text-stop-bright line-through decoration-2">
               {budget.traditional.value}
             </dd>
-            <dd className="order-3 text-sm text-on-ink-muted">{budget.traditional.formula}</dd>
+            <dd className="order-3 text-sm text-muted-foreground">{budget.traditional.formula}</dd>
           </div>
           <div className="flex flex-col gap-1">
-            <dt className="order-1 text-on-ink-muted">{budget.saved.label}</dt>
-            <dd className="order-2 font-heading text-4xl font-bold text-brass-bright">{budget.saved.value}</dd>
+            <dt className="order-1 text-muted-foreground">{budget.saved.label}</dt>
+            <dd className="order-2 font-heading text-4xl font-bold text-sodium">{budget.saved.value}</dd>
             <dd className="order-3 flex gap-6">
               {budget.ratios.map((ratio) => (
                 <span key={ratio.label}>
                   <span className="font-heading text-2xl font-bold">{ratio.value}</span>{" "}
-                  <span className="text-sm text-on-ink-muted">{ratio.label}</span>
+                  <span className="text-sm text-muted-foreground">{ratio.label}</span>
                 </span>
               ))}
             </dd>
           </div>
         </dl>
-        <p className="mt-8 rounded-lg bg-ink-700/70 px-5 py-4 text-sm text-on-ink-muted">
+        <p className="mt-8 rounded-lg bg-night-raised px-5 py-4 text-sm text-muted-foreground">
           <span className="font-semibold text-white">Note:</span> {budget.note}
         </p>
       </div>
@@ -54,7 +54,7 @@ export function ReportSummary() {
             <FunnelChart steps={funnel.steps} caption="Conversion funnel from total contacts to hot leads" />
           </div>
         </div>
-        <dl className="flex flex-col gap-px overflow-hidden rounded-xl bg-border ring-1 ring-border lg:col-span-5">
+        <dl className="flex flex-col gap-px overflow-hidden rounded-[1.25rem] bg-border ring-1 ring-border lg:col-span-5">
           {funnel.categories.map((category) => (
             <div key={category.label} className="flex items-baseline justify-between gap-4 bg-background px-6 py-5">
               <dt>
@@ -73,31 +73,31 @@ export function ReportSummary() {
       </div>
 
       <div className="grid gap-8 lg:grid-cols-2">
-        <div className="rounded-xl bg-background p-6 ring-1 ring-border md:p-8">
+        <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
           <SubHeading>{outreach.title}</SubHeading>
           <FigureList rows={outreach.items} className="mt-4" />
         </div>
-        <div className="surface-ink rounded-xl p-6 md:p-8">
+        <div className="surface-ink rounded-[1.25rem] p-6 md:p-8">
           <SubHeading>{efficiency.title}</SubHeading>
           <dl className="mt-5 grid grid-cols-2 gap-6">
             <div className="flex flex-col gap-1">
-              <dt className="order-1 text-sm text-on-ink-muted">{efficiency.ai.label}</dt>
-              <dd className="order-2 font-heading text-3xl font-bold text-route-bright">{efficiency.ai.value}</dd>
-              <dd className="order-3 text-sm text-on-ink-muted">{efficiency.ai.note}</dd>
+              <dt className="order-1 text-sm text-muted-foreground">{efficiency.ai.label}</dt>
+              <dd className="order-2 font-heading text-3xl font-bold text-go-bright">{efficiency.ai.value}</dd>
+              <dd className="order-3 text-sm text-muted-foreground">{efficiency.ai.note}</dd>
             </div>
             <div className="flex flex-col gap-1">
-              <dt className="order-1 text-sm text-on-ink-muted">{efficiency.traditional.label}</dt>
+              <dt className="order-1 text-sm text-muted-foreground">{efficiency.traditional.label}</dt>
               <dd className="order-2 font-heading text-3xl font-bold text-stop-bright line-through decoration-2">
                 {efficiency.traditional.value}
               </dd>
-              <dd className="order-3 text-sm text-on-ink-muted">{efficiency.traditional.note}</dd>
+              <dd className="order-3 text-sm text-muted-foreground">{efficiency.traditional.note}</dd>
             </div>
           </dl>
           <ul className="mt-6 flex flex-col gap-3">
             {efficiency.outcomes.map((outcome) => (
-              <li key={outcome.value} className="rounded-lg bg-ink-700/70 px-4 py-3">
+              <li key={outcome.value} className="rounded-lg bg-night-raised px-4 py-3">
                 <p className="font-semibold">{outcome.value}</p>
-                <p className="text-sm text-on-ink-muted">{outcome.note}</p>
+                <p className="text-sm text-muted-foreground">{outcome.note}</p>
               </li>
             ))}
           </ul>
@@ -110,12 +110,12 @@ export function ReportSummary() {
 export function ReportSegments() {
   const maxInterest = Math.max(...segments.rows.map((row) => parseFloat(row[3])))
   return (
-    <ReportSection id="segments" tone="warm" title={segments.title} lead={segments.lead}>
-      <div className="overflow-x-auto rounded-xl ring-1 ring-border">
+    <ReportSection id="segments" tone="deep" title={segments.title} lead={segments.lead}>
+      <div className="overflow-x-auto rounded-[1.25rem] ring-1 ring-border">
         <table className="w-full min-w-[60rem] border-collapse bg-background text-[0.95rem]">
           <caption className="sr-only">{segments.title}</caption>
           <thead>
-            <tr className="border-b-2 border-ink">
+            <tr className="border-b-2 border-asphalt">
               {segments.columns.map((column, index) => (
                 <th
                   key={column}
@@ -138,8 +138,8 @@ export function ReportSegments() {
                   <th scope="row" className="sticky left-0 z-10 bg-background px-4 py-3 text-left font-medium whitespace-nowrap">
                     {name}
                   </th>
-                  <td className="px-4 py-3 text-right tabular-nums">{count.format(contacts)}</td>
-                  <td className="px-4 py-3 text-right font-semibold tabular-nums">{count.format(interested)}</td>
+                  <td className="px-4 py-3 text-right">{count.format(contacts)}</td>
+                  <td className="px-4 py-3 text-right font-semibold">{count.format(interested)}</td>
                   <td className="px-4 py-3">
                     <CellBar value={parseFloat(interest)} max={maxInterest} text={interest} />
                   </td>
@@ -147,7 +147,7 @@ export function ReportSegments() {
                     <td
                       key={index}
                       className={cn(
-                        "px-4 py-3 text-right tabular-nums",
+                        "px-4 py-3 text-right",
                         typeof value === "string" ? "text-muted-foreground" : "font-semibold"
                       )}
                     >
@@ -162,16 +162,16 @@ export function ReportSegments() {
       </div>
 
       <div className="grid gap-8 lg:grid-cols-2">
-        <div className="rounded-xl bg-background p-6 ring-1 ring-border md:p-8">
+        <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
           <h3 className="flex items-center gap-3 font-heading type-title font-semibold">
-            <span aria-hidden className="size-3 rounded-[2px] bg-route" />
+            <span aria-hidden className="size-2.5 rounded-full bg-go" />
             {segments.top.title}
           </h3>
           <FigureList rows={pairs(segments.top.items)} className="mt-4" />
         </div>
-        <div className="rounded-xl bg-background p-6 ring-1 ring-border md:p-8">
+        <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
           <h3 className="flex items-center gap-3 font-heading type-title font-semibold">
-            <span aria-hidden className="size-3 rotate-45 bg-stop" />
+            <span aria-hidden className="h-0.5 w-5 bg-stop" />
             {segments.low.title}
           </h3>
           <FigureList rows={pairs(segments.low.items)} className="mt-4" />
@@ -204,7 +204,7 @@ export function ReportResources() {
     <ReportSection id="resources" title={resources.title} lead={resources.basis}>
       <StatTiles items={hours} />
 
-      <div className="rounded-xl bg-background p-6 ring-1 ring-border md:p-10">
+      <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-10">
         <SubHeading>{speed.title}</SubHeading>
         <div className="mt-6 grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="min-w-0 lg:col-span-7">
@@ -221,7 +221,7 @@ export function ReportResources() {
                 },
               ]}
             />
-            <p className="mt-5 font-heading text-2xl font-bold text-route">{speed.factor}</p>
+            <p className="mt-5 font-heading text-2xl font-bold text-go">{speed.factor}</p>
             <ul className="mt-3 flex flex-col gap-1.5 text-[0.95rem] text-muted-foreground">
               <li>
                 {speed.manual.label}: {speed.manual.note}
@@ -260,9 +260,9 @@ export function ReportResources() {
       <div className="flex flex-col gap-6">
         <SubHeading>{comparison.title}</SubHeading>
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-xl bg-background p-6 ring-1 ring-border md:p-8">
+          <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
             <h4 className="flex items-center gap-2.5 font-heading text-lg font-semibold">
-              <span aria-hidden className="size-2.5 rotate-45 bg-stop" />
+              <span aria-hidden className="h-0.5 w-4 bg-stop" />
               {comparison.traditional.title}
             </h4>
             <FigureList
@@ -271,21 +271,21 @@ export function ReportResources() {
               className="mt-4"
             />
           </div>
-          <div className="rounded-xl bg-background p-6 ring-1 ring-border md:p-8">
+          <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
             <h4 className="flex items-center gap-2.5 font-heading text-lg font-semibold">
-              <span aria-hidden className="size-2.5 rounded-[2px] bg-route" />
+              <span aria-hidden className="size-2 rounded-full bg-go" />
               {comparison.ai.title}
             </h4>
             <FigureList rows={pairs(comparison.ai.rows)} total={comparison.ai.total as [string, string]} className="mt-4" />
           </div>
         </div>
-        <div className="surface-ink flex flex-col gap-4 rounded-xl p-6 sm:flex-row sm:items-center sm:justify-between md:p-10">
+        <div className="surface-ink flex flex-col gap-4 rounded-[1.25rem] p-6 sm:flex-row sm:items-center sm:justify-between md:p-10">
           <div>
-            <p className="font-heading text-2xl font-bold text-brass-bright">{comparison.savings.label}</p>
-            <p className="text-on-ink-muted">{comparison.savings.note}</p>
+            <p className="font-heading text-2xl font-bold text-sodium">{comparison.savings.label}</p>
+            <p className="text-muted-foreground">{comparison.savings.note}</p>
           </div>
           <div className="sm:text-right">
-            <p className="font-heading text-[clamp(2.5rem,1.6rem+3vw,4rem)] leading-none font-extrabold font-wide text-brass-bright">
+            <p className="font-heading text-[clamp(2.5rem,1.6rem+3vw,4rem)] leading-none font-extrabold stretch-112 text-sodium">
               {comparison.savings.value}
             </p>
             <p className="mt-2 font-semibold">{comparison.savings.roi}</p>
@@ -299,14 +299,14 @@ export function ReportResources() {
 export function ReportAiVsHuman() {
   const report = aiVsHumanReport
   const sides = [
-    { side: report.human, marker: "size-3 rotate-45 bg-chart-human" },
-    { side: report.ai, marker: "size-3 rounded-[2px] bg-chart-ai" },
+    { side: report.human, marker: "size-3 rounded-[3px] bg-chart-human" },
+    { side: report.ai, marker: "size-3 rounded-[3px] bg-chart-ai" },
   ]
   return (
-    <ReportSection id="ai-vs-human" tone="warm" title={report.title} lead={report.lead}>
+    <ReportSection id="ai-vs-human" tone="deep" title={report.title} lead={report.lead}>
       <div className="grid gap-6 lg:grid-cols-2">
         {sides.map(({ side, marker }) => (
-          <div key={side.title} className="rounded-xl bg-background p-6 ring-1 ring-border md:p-8">
+          <div key={side.title} className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
             <h3 className="flex items-center gap-3 font-heading type-title font-semibold">
               <span aria-hidden className={marker} />
               {side.title}
@@ -344,7 +344,7 @@ export function ReportAiVsHuman() {
         <SubHeading>{report.differences.title}</SubHeading>
         <div className="mt-6 grid gap-8 md:grid-cols-3">
           {report.differences.items.map((item) => (
-            <div key={item.title} className="border-t-2 border-route pt-5">
+            <div key={item.title} className="border-t-2 border-go pt-5">
               <h4 className="font-heading text-lg font-semibold">{item.title}</h4>
               <p className="mt-2 text-muted-foreground">{item.text}</p>
             </div>
@@ -352,14 +352,14 @@ export function ReportAiVsHuman() {
         </div>
       </div>
 
-      <div className="surface-ink rounded-xl p-6 md:p-10">
-        <p className="font-heading text-base font-semibold text-brass-bright">{report.takeaway.title}</p>
-        <p className={cn(typeRole.lead, "mt-3 max-w-[62ch] font-serif text-2xl leading-snug")}>{report.takeaway.text}</p>
+      <div className="surface-ink rounded-[1.25rem] p-6 md:p-10">
+        <p className="font-heading text-base font-semibold text-sodium">{report.takeaway.title}</p>
+        <p className={cn(typeRole.lead, "mt-3 max-w-[62ch] font-heading text-2xl leading-snug")}>{report.takeaway.text}</p>
         <dl className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {report.takeaway.stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-1 rounded-lg bg-ink-800 p-5">
-              <dt className="order-2 text-sm text-on-ink-muted">{stat.label}</dt>
-              <dd className="order-1 font-heading text-3xl font-bold text-brass-bright">{stat.value}</dd>
+            <div key={stat.label} className="flex flex-col gap-1 rounded-lg bg-night-raised p-5">
+              <dt className="order-2 text-sm text-muted-foreground">{stat.label}</dt>
+              <dd className="order-1 font-heading text-3xl font-bold text-sodium">{stat.value}</dd>
             </div>
           ))}
         </dl>

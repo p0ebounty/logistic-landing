@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 const count = new Intl.NumberFormat("en-US")
 
 /** Share of the bar track a full-length bar may use, so its end label always fits. */
-const TRACK = 0.82
+const TRACK = 0.72
 
 function Bar({
   value,
@@ -116,7 +116,7 @@ export function VersusChart({
             const humanText = row.humanText ?? `${count.format(row.human)}${row.unit ?? ""}`
             const aiText = row.aiText ?? `${count.format(row.ai)}${row.unit ?? ""}`
             return (
-              <figure key={row.label} className="rounded-xl bg-background p-5 ring-1 ring-border">
+              <figure key={row.label} className="rounded-[1.25rem] bg-background p-5 ring-1 ring-border">
                 <figcaption className="font-semibold">{row.label}</figcaption>
                 <dl className="mt-4 flex flex-col gap-2">
                   {(
@@ -146,10 +146,10 @@ export function VersusChart({
 export function CellBar({ value, max, text }: { value: number; max: number; text: string }) {
   return (
     <span className="flex items-center justify-end gap-2">
-      <span aria-hidden className="hidden h-1.5 w-16 overflow-hidden rounded-full bg-paper-band sm:block">
+      <span aria-hidden className="hidden h-1.5 w-16 overflow-hidden rounded-full bg-paper-deep sm:block">
         <span className="block h-full rounded-full bg-chart-ai" style={{ width: `${(value / max) * 100}%` }} />
       </span>
-      <span className="w-12 text-right tabular-nums">{text}</span>
+      <span className="w-12 text-right">{text}</span>
     </span>
   )
 }
