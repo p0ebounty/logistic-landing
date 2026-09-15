@@ -1,0 +1,10 @@
+{
+  "taskId": "f664580db902a9761485776ccc33b75b",
+  "model": "gpt-image-2-5-flare-text-to-image",
+  "name": "hero-interchange",
+  "aspectRatio": "21:9",
+  "resolution": "4K",
+  "prompt": "Top-down aerial drone photograph at night of a vast multi-level highway stack interchange on the edge of an American city. Long-exposure light trails in brass-gold and white flow smoothly through the curving ramps and merge lanes, forming an elegant, orderly routing pattern: many directions, clear lanes, no collisions. A few semi-trucks read as longer, brighter streaks. The surrounding land is deep ink-navy darkness with faint texture of fields, service roads and warehouse roofs. The dense heart of the interchange sits in the right half of the frame; the left 45% of the frame stays calm and dark so a headline can be set over it. Art direction: photorealistic editorial photography for a premium B2B technology brand that serves North American freight companies. Color grade: deep ink-navy shadows and night tones, warm brass-gold and sodium-amber artificial light, crisp white highlights, and only a restrained hint of highway-sign green where signs would naturally be. Medium-format camera look, razor-sharp detail, subtle natural film grain, calm and confident mood, uncluttered composition with generous negative space. There must be no text, letters, numbers, logos, brand markings, license plates, watermarks, UI overlays or recognizable faces anywhere in the image.",
+  "sourceUrl": "https://tempfile.aiquickdraw.com/gpt-image-2-5/image_1789475626598_lxjv4j.png",
+  "costTime": 28
+}

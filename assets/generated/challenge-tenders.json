@@ -1,0 +1,10 @@
+{
+  "taskId": "c3ff8232f50fd7fa909a8d0a71ac6a4c",
+  "model": "gpt-image-2-5-flare-text-to-image",
+  "name": "challenge-tenders",
+  "aspectRatio": "3:2",
+  "resolution": "2K",
+  "prompt": "Aerial photograph at dawn of a large truck trailer yard: hundreds of unbranded white and grey semi-trailers parked in perfectly aligned rows, long shadows stretching across the asphalt. The first warm brass sunlight touches the trailer roofs along one edge of the frame while the rest of the yard is still in cool ink-navy shade. A feeling of precise preparation and exact timing. Art direction: photorealistic editorial photography for a premium B2B technology brand that serves North American freight companies. Color grade: deep ink-navy shadows and night tones, warm brass-gold and sodium-amber artificial light, crisp white highlights, and only a restrained hint of highway-sign green where signs would naturally be. Medium-format camera look, razor-sharp detail, subtle natural film grain, calm and confident mood, uncluttered composition with generous negative space. There must be no text, letters, numbers, logos, brand markings, license plates, watermarks, UI overlays or recognizable faces anywhere in the image.",
+  "sourceUrl": "https://tempfile.aiquickdraw.com/p/c3ff8232f50fd7fa909a8d0a71ac6a4c_1_1789475623_9914.png",
+  "costTime": 25
+}

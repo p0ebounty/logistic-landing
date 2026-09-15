@@ -1,0 +1,633 @@
+# Old landing — full visible text. Ground truth for the content-coverage check (scripts/content-coverage.mjs).
+# Source: https://logistic.magnaqore.io/ (Readdy.ai build), extracted 2026-09-15 from Chrome (document.body.innerText).
+# Lines starting with "#" are metadata and are ignored by the coverage check.
+# <title>: MagnaQore Logistic - AI Sales Department for Logistics
+# meta description: The only AI system that transforms logistical chaos into a manageable sales pipeline in 30 days. Build an AI sales department for your logistics company.
+# meta keywords: AI logistics, sales automation, logistics CRM, AI sales department, MagnaQore
+# CTA (6x "Book Your Free Strategy Call Now"): https://cal.com/ina-nistoras/magnaqore-logistic
+# Example report link: https://claude.ai/public/artifacts/daa309ac-3aad-4e58-870c-9fc4e89d12ae
+# Video: https://www.youtube.com/watch?v=ptQGNL-XdFE ("MagnaQore Logistic Overwiev", Maria Sakovets)
+# Product screenshots reused: CRM (Clients/Loads/Carriers), linked loads, 4 analytics dashboards, lead-generation report.
+
+MAGNAQORE LOGISTIC
+
+The only AI system that transforms logistical chaos into a manageable sales pipeline in 30 days.
+
+In 30 days, we build an AI sales department for your company,
+which processes 2,000 to 70,000 leads per month without a big team.
+5 times faster, 4 times cheaper, with a guarantee of 0% lead loss.
+Book Your Free Strategy Call Now
+2K-70K
+Leads per Month
+
+Processed without a big team
+
+5X
+Faster
+
+Data and deal processing
+
+4X
+Cheaper
+
+Reduction in sales department costs
+
+0%
+Lead Loss
+
+Full guarantee of data preservation
+
+Individual Approach
+
+No templates. No generic chatbots.
+
+Specialization
+
+Only a specialized system for US and Canadian logistics, built from scratch for real sales & operations workflows.
+
+We build your AI sales department in ≤30 days. It processes 2,000 leads in 11 hours,
+
+0% lost inquiries, 0% missed tenders, 100% data transparency.
+
+Result: Close more deals without increasing your headcount!
+
+Start transforming your sales department today and ensure continuous growth.
+
+Who is this for?
+
+Logistics companies that...
+
+Are losing hot inquiries
+
+Leads slip through the cracks due to delayed responses.
+
+Miss tender deadlines
+
+Important opportunities lost due to poor tracking.
+
+Struggle with data chaos
+
+Information scattered across multiple systems and spreadsheets.
+
+Have inconsistent follow-ups
+
+No systematic approach to nurturing prospects.
+
+Don't see employees workload
+
+Uneven distribution: some are overloaded, others are idle.
+
+Can't track sales performance
+
+No clear visibility into conversion rates and pipeline health.
+
+Waste time on manual tasks
+
+Hours spent on data entry instead of selling.
+
+Lack real-time insights
+
+Decisions made on outdated or incomplete information.
+
+Important:
+
+If any of this sounds like you — you are losing money daily!
+
+KEY CHALLENGES IN LOGISTICS AND HOW WE ADDRESS THEM?
+Lead, Load, and Priority Management
+Problem
+
+People physically can't process the entire flow of loads.
+
+While they are working with one client, an urgent load that brings instant profit might come in – but the manager won't SEE it.
+
+Result: a hot lead "cools off," profit is lost, the company loses money where it could have earned it faster.
+
+This is a direct consequence of human error and a person's inability to work and monitor simultaneously.
+
+Solution
+•
+
+each new client/load receives an automatic rating (volume, urgency, activity)
+
+•
+
+the system instantly assigns it to the person with the lowest workload
+
+•
+
+distribution without emotions, fatigue, or overload
+
+•
+
+reassignment only manually (human control)
+
+Result of Lead Management Solution
+Eliminate Human Errors
+Priorities are set automatically, without subjective factors
+Company Stops Losing Warm Leads
+Every request is processed on time, no one cools off
+Department Reacts Faster Than Competitors
+Instant distribution provides a speed advantage
+Profit Grows by Timely Handling of Urgent Requests
+High-margin orders are no longer lost
+Communication Quality Control and Team Time Savings
+
+While an employee tries to reach out or manually enter data, a hot lead cools down, a tender is lost, and the company loses money.
+
+While a manager tries to reach out or manually enter data, a hot lead cools down, a tender is lost, and the company loses money.
+
+A person simply cannot physically:
+
+•
+make calls on time
+•
+track the activity of all leads
+•
+conduct follow-ups
+•
+work with hundreds of thousands of contacts simultaneously
+
+And the company pays for work that does not generate sales.
+
+What Does the System Do?
+01
+First Call to Client on the Same Day
+
+Instant reaction to a new request
+
+02
+Follow-up Every 24 Hours
+
+No omissions or "forgot/didn't have time"
+
+03
+Automated Callbacks with Priority Consideration
+
+The system considers time zone and client importance
+
+04
+Logging All Conversations in CRM
+
+Complete communication history automatically
+
+05
+Lead Classification
+
+Assessment of volume, interest, activity
+
+06
+Automatic Downgrading of "Silent" Leads
+
+The system automatically identifies inactive clients
+
+07
+Transferring Hot Leads to the human
+
+Only when they are truly ready to talk
+
+Result
+What used to take months of manual labor, AI now does
+
+without errors, without delays, without burnout.
+
+If a human processes 300 contacts per day
+
+even at 1 minute per contact:
+
+5
+hours of routine work
+
+daily
+
+130
+hours per month
+
+that do not generate sales
+
+Now, the AI system does all this automatically. And not just faster — incomparably faster.
+
+Tenders and Deadlines
+Problem
+
+Tenders arrive constantly—but the team starts working on them too late. No one tracks the submission window.
+
+Materials are submitted at the last minute.
+
+Due to chaos, participation conversion drops → the company loses to competitors, even though it could have won.
+
+What does the system do?
+Records the tender_window
+Creates a callback/reminder 7–10 days before submission
+Assigns a responsible employee in advance
+For other tasks, deadlines are set manually → the system shows Due/Overdue statuses
+Tender Management Results
+Team Prepares On Time
+
+Timely reminders eliminate haste
+
+Participation in More Tenders
+
+We don't miss opportunities due to oversight
+
+Increased Percentage of Won Tenders
+
+Due to timely and high-quality response
+
+Increased Funnel Coverage
+
+More participation → more sales
+
+Unified CRM Architecture: Clients → Loads → Carriers
+
+Currently, humans copy information between tables and services. Data becomes outdated faster than it's updated.
+
+By the time an employee transfers data from one table to another → new data appears. Information transfer between departments is slow and manual.
+
+What the system does?
+unites Clients → Loads → Carriers into a single connected architecture
+statuses and stages transition automatically
+documents, cards, communication history all in one window
+Result
+instant information transfer between departments
+elimination of errors and duplication
+abandonment of manual copying
+all employees have up-to-date information in real time
+Analytics Dashboards
+
+Real-time visibility into all sales processes, staff performance, and lead conversion metrics
+
+The head of the sales department in logistics does not see in real time what is happening with leads, tenders, team workload, and SLA deadlines.
+
+Decisions are made based on "yesterday's" figures, not the current situation.
+
+Because of this:
+people work unevenly — some are overloaded, others are idle
+hot leads are lost because no one noticed them in time
+reports are compiled manually and always arrive late
+What does the MagnaQore Logistic analytics system provide?
+1
+Unified Strategic Window
+
+The entire department, accessible through a single interface.
+
+All key performance indicators are displayed in real-time:
+
+Individual staff workload
+Urgent tenders and their deadlines
+Rating and value of each lead
+Current client statuses and activities
+2
+Time Savings and Error Elimination
+
+The dashboard performs tasks that previously took hours of manual effort:
+
+No need to manually compile reports
+No need to transfer data between spreadsheets
+No need to reconcile statuses across multiple systems
+
+All analytics update automatically — without human errors.
+
+Company Outcome
+Processing 2,000 Contacts / 1 Month
+
+Complete Transparency of the Sales Process
+
+Instant Identification of Risks and Bottlenecks
+
+Saving Hours for Management and the Employees
+
+Click here
+Example report for a real estate company on system performance over 1 month
+Comparison of AI Sales Department and Human Sales Department Speed
+Performance Metrics Comparison
+AI vs Human
+Metric MagnaQore AI Contact Center Human Department
+Time per 1 contact 0.3456 min 15 min
+
+Processing time for 2,000 contacts
+11.5 hours 1,166.7 hours
+Database processing speed 1 day 30 days
+Real conversations (Real-talk >25 sec) 392 lower, high losses
+
+Missed leads
+0% 25–40%
+Human Sales Department (Labor Costs)
+Labor Cost Analysis
+Human Resources
+Task Formula Hours
+Search for 2,000 target contacts 20 min × 2,000 666.7 hrs
+Call + data recording 15 min × 2,000 500 hrs
+TOTAL man-hours — 1,166.7 hrs / month
+Required employees 1,166.7 hrs ÷ 176 hrs 6.6 FTE → 7 staff
+Key Metric Comparison (AI vs Human)
+Metric AI MagnaQore Human
+
+Call Speed
+2,000 in 1 day 2,000 in 30 days
+Time per Contact 0.3456 min 15 min
+Actual Dialogues 392 Lower, significant losses
+Staffing Needs 0 7 staff
+
+Annual Cost
+$62k $294k
+
+Lead Loss
+0% 25–40%
+Follow-up Auto every 24 hours Irregular
+CRM Logging Automatic Manual, errors
+MagnaQore AI Agent Pricing (Monthly)
+Period What's Included Cost
+1-2 Months AI Agent Development (includes 2,000 contact calls)
+Duration depends on project complexity
+$12,000
+3 Months Development completion + 1 month support ($5k/month) $17,000
+6 Months $12k development + $20k (4 months support × $5k/month) $32,000
+12 Months $12k development + $50k (10 months support × $5k/month) $62,000
+Development + 12 Months Support $12k development + $60k (12 months support × $5k/month) $72,000
+Cost of a Human Department
+Expense Item Amount / Month
+Salaries for 7 staff (US market) $18 000 - $28 000
+Software/CRM/Licenses $500 - $1 500
+Databases / Scripts $300 - $1 000
+
+TOTAL / Month
+$18 800 - $30 500
+
+Average Actual Cost
+$24 500 / month
+Additional Services for Instant Results from AI Sales Department
+2000 Potential Leads Monthly
+
+Receive 2,000 targeted leads every month and launch a full lead-processing system without spending on databases or marketing.
+
+We immediately provide a ready pool of 2,000 targeted contacts per month who have active loads…
+
+Employee Training for the New System
+
+We will train your team to work effectively with MagnaQore from day one — without chaos, delays, or staff resistance.
+
+Even the strongest system will not yield results if the team doesn't understand how to use it.
+
+We integrate the team directly into the training process: video tutorials, ready-made guides, checklists, step-by-step instructions, and live chat support.
+
+Audit of Internal Company Processes
+
+The audit is conducted during system development and helps identify all growth points for the company — so that further automation yields results within the first few weeks.
+
+Most logistics companies lose profit due to "hidden" bottlenecks in their processes.
+
+During development, we simultaneously conduct an audit: analyzing all current processes, identifying routine tasks, where leads are lost, where deadlines are missed, and which processes can be automated in 2-5 days.
+
+AI Literacy Training for Employees
+
+We will teach your team to use AI as a full-fledged assistant — so that sales grow faster, and employees accomplish 2–3 times more in the same amount of time.
+
+A department that doesn't understand AI tools works slower than competitors.
+
+We train employees to: write effective prompts, delegate routine tasks to AI, check data quality, speed up work with documents, tenders, and brokers.
+
+Technical Support with a Personal Specialist
+
+Get a personal tech expert who supports your system daily.
+
+The logistics business operates 24/7. A system error → lost cargo → lost client.
+
+A personal technical specialist: responds within 5–20 minutes during business hours, solves problems faster than any IT department, optimizes processing routes, and accelerates lead handling up to 3 times.
+
+Additional Technical Features (Custom)
+
+Adapt MagnaCore to your unique business without additional costs.
+
+Every logistics company has its own unique characteristics that off-the-shelf CRMs and call centers don't account for.
+
+We create additional functions for your process: SLA tracking, automated confirmations, overdue task control.
+
+This transforms the system from a "regular dialer" into the operational brain of your entire logistics.
+
+Bundle Packages with Gifts
+Feature / Element 6 Months – NO Calls 6 Months – WITH Calls 12 Months – NO Calls 12 Months – WITH Calls (TOP)
+Actual Setup Cost $7 500 $12 000 $7 500 $12 000
+Setup (Included Free) ✓ ✓ ✓ ✓
+Setup Duration 1 month 2 months 1 month 2 months
+AI Calling ✗ ✓ ✗ ✓
+24-Hour Follow-up ✓ ✓ ✓ ✓
+Lead Auto-rating ✓ ✓ ✓ ✓
+Tender-window Logic ✗ ✓ ✗ ✓
+CRM Architecture ✓ ✓ ✓ ✓
+Analytical Dashboards ✓ ✓ ✓ ✓
+Technical Support (Months) 6 months X $3500 per month 6 months X $5000 per month 12 months X $3500 per month 12 months X $5000 per month
+Bonus Technical Support ✗ ✗ $3500 $5,000
+Personal Technical Specialist ✓ ✓ ✓ ✓
+Custom Features (Additional Logic if Needed) ✓ ✓ ✓ ✓
+Internal Process Audit ✗ ✗ $10,000 $10,000
+Team Training ✓ ✓ ✓ ✓
+Course «Hybrid System: Human + AI» ✓ ✓ ✓ ✓
+2000 Leads Monthly ✓ ✓ ✓ ✓
+Total Value (with Gifts) $48 500 $62 000 $100 500 $125 000
+Setup $7 500 $12 000 $7 500 $12 000
+Monthly Service Fee $21,000
+(6 months X $3500 per month) $30,000
+(6 months X $5000 per month) $42,000
+(12 months X $3500 per month) $60,000
+(12 months X $5000 per month)
+2000 Leads Monthly $18,000
+(6 months X $3000 per month) $18,000
+(6 months X $3000 per month) $36,000
+(12 months X $3000 per month) $36,000
+(12 months X $3000 per month)
+Course «Hybrid System: Human + AI» $1000 (per person) $1000 (per person) $1000 (per person) $1000 (per person)
+Bonus Technical Support ✗ ✗ $3500 $5,000
+Internal Process Audit ✗ ✗ $10,000 $10,000
+Sales Team Training $500 (per person) $500 (per person) $500 (per person) $500 (per person)
+Custom Features (Additional Logic if Needed) - gift for the first 100 clients, 10 spots left $500 per feature development $500 per feature development $500 per feature development $500 per feature development
+Total Client Payment $21 000 $30 000 $42 000 $60 000
+Savings minus $27 500 minus $32 000 minus $58 500 minus $65 000
+Book Your Free Strategy Call Now
+COMPARISON WITH HUMAN STAFF COSTS
+6 months
+without calls 6 months
+with calls 12 months
+without calls 12 months
+with calls In-house Team
+System Setup
+1 month = $7,500 →
+✓
+FREE
+
+2 months = $12,000 →
+✓
+FREE
+
+1 month = $7,500 →
+✓
+FREE
+
+2 months = $12,000 →
+✓
+FREE
+
+✗
+No — company pays
+salaries immediately
+
+Free month of service ✗ ✗
+✓
+1 month
+
+✓
+1 month
+✗
+Monthly Service $3,500 / month $5,000 / month $3,500 / month $5,000 / month $20,000–$26,000 /
+month
+AI Calling Included ✗ ✓ ✗ ✓
+✗
+(expensive call
+centers + large staff)
+
+2000 Leads Monthly ✓ ✓ ✓ ✓
+✗
+pay separately for
+databases
+
+Company Process Audit ✓ ✓ ✓ ✓
+✗
+No
+
+Additional Tech Features (Custom) ✓ ✓ ✓ ✓ ✗
+Technical Support + Manager ✓ ✓ ✓ ✓
+✗
+requires a separate
+supervisor
+
+Employee System Training ✓ ✓ ✓ ✓
+✗
+paid separately
+
+AI-Upgrade Program (training) ✓ ✓ ✓ ✓
+✗
+No
+
+TOTAL Package Cost
+6 months
+$21,000 $30,000 — — $60,000 – $156,000 for
+6 months
+
+TOTAL Package Cost
+12 months
+— — $42,000 $60,000 $120,000 – $312,000
+per year
+Real Package Value $48,500 $62,000 $100,500 $125,000 —
+Saved by taking the bundle $27,500 $32,000 $58,500 $65,000 —
+
+Savings compared to human costs
+$39,000–$135,000 $30,000–$126,000 $78,000–$270,000 $60,000–$252,000 =
+Why MagnaQore is Better?
+Specialization
+
+We are the only AI team that works exclusively with North American logistics.
+
+Speed
+
+Full-fledged AI sales department in <30 days.
+
+Industrial-Scale Automation
+
+While your competitors are limited by human capacity, our system processes up to 5,000 requests daily. Each client receives personalized follow-ups, timely reminders, and professional support — 24/7, no weekends, zero human errors.
+
+AI Cost Optimization: 35× Cheaper
+
+Deep prompt optimization reduced AI costs by 35×.
+
+Example at 18,000+ requests/day:
+
+Standard solution: $428/month
+MagnaQore: $47/month
+Your savings: $381/month
+
+One request costs just $0.0026 instead of $0.024 — same quality, fraction of the price.
+
+Own Infrastructure: Save $5,000+/Month
+
+We deploy on your dedicated servers, eliminating expensive cloud subscriptions.
+
+Cost comparison at 10,000 calls/month:
+
+Cloud solutions: ~$6,000/month
+MagnaQore: One-time setup only
+Monthly savings: $5,000+
+
+You pay for the server (like photo storage), not per transaction.
+
+Documented Results
+
+• 80% reduction in missed deliveries
+
+• 35% decrease in workload
+
+• 4.5× faster request processing
+
+• 5× lead processing capacity (same team, same cost)
+
+Gen-Z Team
+
+Fast, flexible, practical. We work hands-on, not with PowerPoints.
+
+Result:
+
+Professional setup pays for itself in month 1, then works 24/7 extracting profit from every contact — with no subscription fees and minimal AI costs.
+
+If you're still here, you know this is your problem.
+
+You're tired of:
+
+•
+Losing deals because you followed up too late
+•
+Watching competitors scale while your team drowns
+•
+Paying for leads that die in your pipeline
+•
+Missing tenders because nobody tracked the deadline
+•
+Wondering which manager said what to which client
+
+And you know that waiting another quarter won't make this easier.
+
+Here's what we offer:
+
+A 30-day pilot where you'll see this system working with your actual contacts, your actual leads, your actual sales process.
+
+What's included:
+Full system access for 30 days
+• Upload your contacts and launch campaigns immediately
+• AI calls your leads while you monitor every conversation
+• Email automation + contact search built-in
+• Run your entire sales operation on one platform
+Expert onboarding sessions
+• We teach your team how to maximize the system
+• Custom setup for your specific logistics workflows
+• Weekly check-ins to optimize performance
+Hands-on support throughout
+• Direct access to our team
+• Real, measurable results you can track daily
+Book a free strategy call using the link below.
+
+We'll assess your current sales process, identify where you're losing the most money and opportunities, show you exactly where AI will create the fastest impact in the next 30–60 days, and discuss whether a pilot makes sense for your company.
+
+Your competitors who automated 6 months ago are already closing deals you don't even know existed.
+
+The question isn't whether AI works.
+
+The question is: How much longer can you afford to wait?
+
+In logistics, speed isn't just about trucks anymore.
+It's about decisions
+
+Book Your Free Strategy Call Now
+
+# ---- Strings that existed only in the old mobile layout (hidden on desktop) ----
+AI Agent Development Setup: $12,000 (fixed price) Includes 2,000 contact calls
+Duration: 1-2 months (depending on project complexity)
+Custom Features - gift for first 100 clients, 10 spots left (per feature)
+RECOMMENDED

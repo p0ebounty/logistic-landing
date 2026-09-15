@@ -1,0 +1,10 @@
+{
+  "taskId": "aa285ab0a360cc9b3bfbfa7fd44f8ee1",
+  "model": "gpt-image-2-5-flare-text-to-image",
+  "name": "pilot-highway",
+  "aspectRatio": "21:9",
+  "resolution": "2K",
+  "prompt": "Wide cinematic photograph just before dawn of a straight, empty two-lane highway crossing open prairie toward a distant horizon. One semi-truck far ahead with its lights on. The sky shifts from deep ink-navy at the top to a thin band of warm brass-gold light at the horizon; the road's center line leads the eye to the vanishing point. Quiet, decisive, forward-looking mood. The upper half and the left third of the frame stay calm so text can be set over them. Art direction: photorealistic editorial photography for a premium B2B technology brand that serves North American freight companies. Color grade: deep ink-navy shadows and night tones, warm brass-gold and sodium-amber artificial light, crisp white highlights, and only a restrained hint of highway-sign green where signs would naturally be. Medium-format camera look, razor-sharp detail, subtle natural film grain, calm and confident mood, uncluttered composition with generous negative space. There must be no text, letters, numbers, logos, brand markings, license plates, watermarks, UI overlays or recognizable faces anywhere in the image.",
+  "sourceUrl": "https://tempfile.aiquickdraw.com/gpt-image-2-5/image_1789475619513_tj3ufg.png",
+  "costTime": 20
+}

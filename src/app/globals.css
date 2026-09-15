@@ -1,0 +1,273 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* MagnaQore brand palette (magnaqore.io) plus two product semantics:
+   route = the system, solutions, results, included; stop = problems, losses, not included. */
+@theme {
+  --color-ink: #0a1d2a;
+  --color-ink-deep: #05121c;
+  --color-ink-800: #10283a;
+  --color-ink-700: #16344a;
+  --color-ink-500: #2e5875;
+  --color-ink-300: #7fa0b8;
+  --color-ink-200: #b3c6d4;
+  --color-paper: #ffffff;
+  --color-paper-warm: #f7f6f3;
+  --color-paper-band: #f0eee9;
+  --color-brass: #c9962b;
+  --color-brass-bright: #e5b54a;
+  --color-brass-deep: #8c6414;
+  --color-brass-wash: #f6efdd;
+  --color-route: #1e6b52;
+  --color-route-bright: #6fc3a0;
+  --color-route-wash: #e4f0ea;
+  --color-stop: #b3261e;
+  --color-stop-bright: #f08a7e;
+  --color-stop-wash: #f8e7e5;
+  --color-on-ink-muted: #a9c0d0;
+
+  /* Chart marks (validated with the dataviz palette checker: CVD ΔE 9.9, contrast >= 3:1 on paper). */
+  --color-chart-ai: #1f9463;
+  --color-chart-human: #b3261e;
+
+  --text-display: clamp(2.5rem, 1.1rem + 4.6vw, 5rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.025em;
+  --text-headline: clamp(2rem, 1.3rem + 2.2vw, 3.25rem);
+  --text-headline--line-height: 1.04;
+  --text-headline--letter-spacing: -0.02em;
+  --text-title: clamp(1.25rem, 1.12rem + 0.45vw, 1.5rem);
+  --text-title--line-height: 1.22;
+  --text-title--letter-spacing: -0.01em;
+  --text-lead: clamp(1.1875rem, 1.06rem + 0.4vw, 1.375rem);
+  --text-lead--line-height: 1.5;
+  --text-statement: clamp(1.75rem, 1.15rem + 1.9vw, 2.75rem);
+  --text-statement--line-height: 1.14;
+  --text-statement--letter-spacing: -0.01em;
+  --text-figure: clamp(2.75rem, 1.9rem + 2.8vw, 4.5rem);
+  --text-figure--line-height: 0.95;
+  --text-figure--letter-spacing: -0.03em;
+
+  --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+
+  /* Starts partly visible: fully transparent text would hold back Largest Contentful Paint. */
+  @keyframes rise {
+    from {
+      opacity: 0.35;
+      transform: translateY(0.85rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #10222f;
+  --card: #ffffff;
+  --card-foreground: #10222f;
+  --popover: #ffffff;
+  --popover-foreground: #10222f;
+  --primary: #0a1d2a;
+  --primary-foreground: #ffffff;
+  --secondary: #f0eee9;
+  --secondary-foreground: #10222f;
+  --muted: #f7f6f3;
+  --muted-foreground: #4d6373;
+  --accent: #f6efdd;
+  --accent-foreground: #8c6414;
+  --destructive: #b3261e;
+  --border: rgb(10 29 42 / 0.14);
+  --input: rgb(10 29 42 / 0.22);
+  --ring: #a87a1f;
+  --radius: 0.5rem;
+}
+
+/* Dark bands (header, hero, challenge index, pilot) swap the semantic tokens locally,
+   so shadcn components inside them pick the right colors without dark: overrides. */
+@layer components {
+  .surface-ink {
+    --background: #0a1d2a;
+    --foreground: #ffffff;
+    --card: #10283a;
+    --card-foreground: #ffffff;
+    --popover: #0a1d2a;
+    --popover-foreground: #ffffff;
+    --primary: #e5b54a;
+    --primary-foreground: #0a1d2a;
+    --secondary: #16344a;
+    --secondary-foreground: #ffffff;
+    --muted: #10283a;
+    --muted-foreground: #a9c0d0;
+    --accent: #16344a;
+    --accent-foreground: #e5b54a;
+    --border: rgb(255 255 255 / 0.16);
+    --input: rgb(255 255 255 / 0.24);
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Type roles as their own utilities: class mergers read custom text-* names as colors and drop them. */
+@utility type-display {
+  font-size: var(--text-display);
+  line-height: var(--text-display--line-height);
+  letter-spacing: var(--text-display--letter-spacing);
+}
+
+@utility type-headline {
+  font-size: var(--text-headline);
+  line-height: var(--text-headline--line-height);
+  letter-spacing: var(--text-headline--letter-spacing);
+}
+
+@utility type-title {
+  font-size: var(--text-title);
+  line-height: var(--text-title--line-height);
+  letter-spacing: var(--text-title--letter-spacing);
+}
+
+@utility type-lead {
+  font-size: var(--text-lead);
+  line-height: var(--text-lead--line-height);
+}
+
+@utility type-statement {
+  font-size: var(--text-statement);
+  line-height: var(--text-statement--line-height);
+  letter-spacing: var(--text-statement--letter-spacing);
+}
+
+@utility type-figure {
+  font-size: var(--text-figure);
+  line-height: var(--text-figure--line-height);
+  letter-spacing: var(--text-figure--letter-spacing);
+}
+
+/* Archivo's width axis: semi-expanded headlines read like freight signage. */
+@utility font-wide {
+  font-variation-settings: "wdth" 112;
+}
+
+/* Reading progress without JavaScript: a scroll-driven animation where supported, hidden elsewhere. */
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@utility scroll-progress {
+  transform-origin: left;
+  transform: scaleX(0);
+
+  @supports (animation-timeline: scroll()) {
+    animation: grow-x linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@utility shell {
+  width: 100%;
+  max-width: 88rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+
+  @media (width >= 80rem) {
+    padding-inline: 4rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-brass-bright);
+    color: var(--color-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

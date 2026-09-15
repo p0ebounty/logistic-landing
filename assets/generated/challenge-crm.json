@@ -1,0 +1,10 @@
+{
+  "taskId": "add87790a619ca76e5742dacc75dfb6d",
+  "model": "gpt-image-2-5-flare-text-to-image",
+  "name": "challenge-crm",
+  "aspectRatio": "3:2",
+  "resolution": "2K",
+  "prompt": "Aerial drone photograph at night of three separate highways arriving from different directions and merging into one wide, smoothly flowing highway. Long-exposure light trails: each incoming road carries its own stream of brass-gold and white light, and after the merge they continue as one coherent, orderly flow. Deep ink-navy surroundings, balanced and calm composition. Art direction: photorealistic editorial photography for a premium B2B technology brand that serves North American freight companies. Color grade: deep ink-navy shadows and night tones, warm brass-gold and sodium-amber artificial light, crisp white highlights, and only a restrained hint of highway-sign green where signs would naturally be. Medium-format camera look, razor-sharp detail, subtle natural film grain, calm and confident mood, uncluttered composition with generous negative space. There must be no text, letters, numbers, logos, brand markings, license plates, watermarks, UI overlays or recognizable faces anywhere in the image.",
+  "sourceUrl": "https://tempfile.aiquickdraw.com/p/add87790a619ca76e5742dacc75dfb6d_1_1789475623_9735.png",
+  "costTime": 25
+}

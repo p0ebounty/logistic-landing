@@ -1,0 +1,21 @@
+# MagnaQore Logistic
+
+> AI sales department for US and Canadian logistics companies. In 30 days MagnaQore builds a system that calls leads, rates them, follows up every 24 hours, tracks tender deadlines and keeps clients, loads and carriers in one CRM. It processes 2,000 to 70,000 leads per month without a big team: 5 times faster, 4 times cheaper, with a guarantee of 0% lead loss.
+
+## Pages
+
+- [MagnaQore Logistic](https://logistic.magnaqore.io/): who it is for, the five challenges it solves, AI vs human comparison, pricing, additional services, bundle packages and the 30-day pilot
+- [Example report](https://logistic.magnaqore.io/example-report): results of a 5-week AI lead generation campaign for a real estate company (20,000 leads parsed, 383 qualified, $156,228 saved, 744% ROI)
+
+## Key facts
+
+- AI contact center: 0.3456 min per contact vs 15 min for a human department; 2,000 contacts in 11.5 hours vs 1,166.7 hours
+- Annual cost: $62k with MagnaQore vs $294k for a 7-person human department
+- AI agent development: $12,000 (includes 2,000 contact calls); support $5,000/month
+- Bundles: 6 months without calls $21,000; 6 months with calls $30,000; 12 months without calls $42,000; 12 months with calls $60,000
+- Specialization: works exclusively with North American logistics
+
+## Contact
+
+- Book a free strategy call: https://cal.com/ina-nistoras/magnaqore-logistic
+- Company: https://magnaqore.io

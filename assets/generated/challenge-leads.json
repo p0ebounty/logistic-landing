@@ -1,0 +1,10 @@
+{
+  "taskId": "779347713b2e41173c8e0336dc2f050b",
+  "model": "gpt-image-2-5-flare-text-to-image",
+  "name": "challenge-leads",
+  "aspectRatio": "3:2",
+  "resolution": "2K",
+  "prompt": "High aerial photograph at blue hour of a large freight distribution center with one long, perfectly straight row of loading docks. Most dock doors are dark. Exactly three docks glow with warm brass light where unbranded semi-trucks are backing in, clearly the priority loads of the moment. Wet asphalt reflects the light; parking stripes and trailer roofs create a clean geometric rhythm. Art direction: photorealistic editorial photography for a premium B2B technology brand that serves North American freight companies. Color grade: deep ink-navy shadows and night tones, warm brass-gold and sodium-amber artificial light, crisp white highlights, and only a restrained hint of highway-sign green where signs would naturally be. Medium-format camera look, razor-sharp detail, subtle natural film grain, calm and confident mood, uncluttered composition with generous negative space. There must be no text, letters, numbers, logos, brand markings, license plates, watermarks, UI overlays or recognizable faces anywhere in the image.",
+  "sourceUrl": "https://tempfile.aiquickdraw.com/p/779347713b2e41173c8e0336dc2f050b_1_1789475623_7727.png",
+  "costTime": 24
+}
