@@ -5,36 +5,45 @@ import { cn } from "@/lib/utils"
 
 const count = new Intl.NumberFormat("en-US")
 
-/** Share of the bar track a full-length bar may use, so its end label always fits. */
+/** Share of the bar track a full-length bar may use on wide tracks. */
 const TRACK = 0.72
+
+/**
+ * Room kept after the longest bar for the longest end label of its chart, so a label never runs out of the card.
+ * Sized from the label length, since the track itself can be only a few labels wide on a phone.
+ */
+const labelRoom = (texts: string[]) => `calc(${Math.max(...texts.map((text) => text.length)) * 1.1}ch + 0.75rem)`
 
 function Bar({
   value,
   max,
   text,
+  room,
   tooltip,
   series,
 }: {
   value: number
   max: number
   text: string
+  room: string
   tooltip: string
   series: "ai" | "human"
 }) {
-  const width = max > 0 ? (value / max) * TRACK * 100 : 0
+  const share = max > 0 ? value / max : 0
   return (
     <Tooltip>
       <TooltipTrigger asChild>
+        {/* The track is an inline-size container: bars scale against what is left of it after the label room. */}
         <div
           tabIndex={0}
           aria-label={tooltip}
-          className="flex h-8 min-w-0 items-center rounded-sm border-l border-border outline-none focus-visible:ring-3 focus-visible:ring-ring"
+          className="flex h-8 min-w-0 items-center rounded-sm border-l border-border outline-none [container-type:inline-size] focus-visible:ring-3 focus-visible:ring-ring"
         >
           {value > 0 ? (
             <span
               aria-hidden
               className={cn("h-5 shrink-0 rounded-r-[4px]", series === "ai" ? "bg-chart-ai" : "bg-chart-human")}
-              style={{ width: `${Math.max(width, 0.6)}%` }}
+              style={{ width: `max(2px, calc(min(${TRACK * 100}cqw, 100cqw - ${room}) * ${share}))` }}
             />
           ) : null}
           <span className="ml-2 font-semibold whitespace-nowrap">{text}</span>
@@ -47,6 +56,7 @@ function Bar({
 
 export function FunnelChart({ steps, caption }: { steps: { label: string; value: number }[]; caption: string }) {
   const max = Math.max(...steps.map((step) => step.value))
+  const room = labelRoom(steps.map((step) => count.format(step.value)))
   return (
     <TooltipProvider delayDuration={120}>
       <figure>
@@ -57,6 +67,7 @@ export function FunnelChart({ steps, caption }: { steps: { label: string; value:
               <Bar
                 value={step.value}
                 max={max}
+                room={room}
                 text={count.format(step.value)}
                 tooltip={`${step.label}: ${count.format(step.value)} contacts, ${((step.value / max) * 100).toFixed(1)}% of total`}
                 series="ai"
@@ -115,6 +126,7 @@ export function VersusChart({
             const max = Math.max(row.human, row.ai)
             const humanText = row.humanText ?? `${count.format(row.human)}${row.unit ?? ""}`
             const aiText = row.aiText ?? `${count.format(row.ai)}${row.unit ?? ""}`
+            const room = labelRoom([humanText, aiText])
             return (
               <figure key={row.label} className="rounded-[1.25rem] bg-background p-5 ring-1 ring-border">
                 <figcaption className="font-semibold">{row.label}</figcaption>
@@ -125,10 +137,18 @@ export function VersusChart({
                       ["ai", aiLabel, row.ai, aiText],
                     ] as const
                   ).map(([series, seriesLabel, value, text]) => (
-                    <div key={series} className="grid grid-cols-[6.5rem_minmax(0,1fr)] items-center gap-3">
+                    // Phones put the series name above its bar, so the bar gets the card's full width.
+                    <div key={series} className="grid items-center gap-x-3 sm:grid-cols-[6.5rem_minmax(0,1fr)]">
                       <dt className="text-sm leading-tight text-muted-foreground">{seriesLabel}</dt>
                       <dd className="min-w-0">
-                        <Bar value={value} max={max} text={text} tooltip={`${seriesLabel}, ${row.label.toLowerCase()}: ${text}`} series={series} />
+                        <Bar
+                          value={value}
+                          max={max}
+                          room={room}
+                          text={text}
+                          tooltip={`${seriesLabel}, ${row.label.toLowerCase()}: ${text}`}
+                          series={series}
+                        />
                       </dd>
                     </div>
                   ))}

@@ -11,7 +11,7 @@ export function Pilot() {
   return (
     <section id="pilot" aria-labelledby="pilot-title" className="surface-ink">
       <PilotScene>
-        <div className="sticky top-0 h-svh min-h-[34rem] overflow-hidden motion-reduce:relative">
+        <div className="pin-scene h-lvh min-h-[34rem] overflow-hidden motion-reduce:h-svh">
           <div data-pilot-window className="absolute inset-0 overflow-hidden">
             <Image
               data-pilot-photo

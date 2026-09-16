@@ -1,3 +1,4 @@
+import { Autoplay } from "@/components/motion/autoplay"
 import { Audience } from "@/components/site/audience"
 import { Challenges } from "@/components/site/challenges"
 import { AiVsHuman, Pricing } from "@/components/site/comparison"
@@ -21,6 +22,7 @@ export default function Page() {
         Skip to content
       </a>
       <SiteHeader />
+      <Autoplay />
       <main id="main">
         <Hero />
         <Overview />

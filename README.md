@@ -31,8 +31,9 @@ Also generated: `/opengraph-image` and `/example-report/opengraph-image`, `/site
 | `src/content/landing.ts` | Every piece of landing copy, table and link (booking URL, video) |
 | `src/content/example-report.ts` | All figures of the example report |
 | `src/components/site/` | Landing sections; `*-scene.tsx` are their scroll scenes |
-| `src/components/motion/` | Reusable motion: smooth scroll, headline reveal, opening media, focus list, horizontal track, card stack |
+| `src/components/motion/` | Reusable motion: smooth scroll, autoplay, headline reveal, opening media, focus list, horizontal track, card stack |
 | `src/lib/gsap.ts` | GSAP with its plugins registered; `MOTION` / `WIDE` media queries |
+| `src/lib/pin-height.ts` | Lets a pinned scene taller than the screen pin by its bottom edge (with the `pin-scene` utility) |
 | `src/components/report/` | Report sections and charts |
 | `src/components/ui/` | shadcn/ui components (Radix base) |
 | `src/lib/structured-data.ts` | JSON-LD (Organization, WebSite, Service with offers, VideoObject, BreadcrumbList, Report) |

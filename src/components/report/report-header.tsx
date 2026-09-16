@@ -62,7 +62,9 @@ export function ReportHeader() {
       </section>
 
       <nav aria-label="Report sections" className="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur-md">
-        <ul className="shell flex gap-1 overflow-x-auto py-2">
+        {/* On narrow screens the links scroll sideways: the fading edge shows there is more, and the end padding
+            lets the last link come clear of the fade. */}
+        <ul className="shell flex gap-1 overflow-x-auto py-2 max-md:pr-12 max-md:[mask-image:linear-gradient(to_right,black_calc(100%-3rem),transparent)]">
           {reportSections.map((section) => (
             <li key={section.id} className="shrink-0">
               <a

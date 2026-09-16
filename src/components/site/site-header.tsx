@@ -56,16 +56,19 @@ function useHeaderState() {
 
   React.useEffect(() => {
     let lastY = window.scrollY
+    // Distance moved in the current direction, so slow steady scrolling (autoplay) counts like a flick.
+    let travel = 0
     const onScroll = () => {
       const y = window.scrollY
       const delta = y - lastY
       lastY = y
+      if (delta !== 0) travel = Math.sign(delta) === Math.sign(travel) ? travel + delta : delta
       setState((current) => {
         const scrolled = y > 8
         let hidden = current.hidden
         if (!motion || y < 160) hidden = false
-        else if (delta > 6) hidden = true
-        else if (delta < -6) hidden = false
+        else if (travel > 6) hidden = true
+        else if (travel < -6) hidden = false
         return current.hidden === hidden && current.scrolled === scrolled ? current : { hidden, scrolled }
       })
     }

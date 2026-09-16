@@ -243,6 +243,21 @@
   }
 }
 
+/* A scene that stays on screen while its runway scrolls by. It fills the large viewport, so no strip opens when mobile
+   browser bars retract, and lays its content out above --bleed, so the content fits the small viewport. When it is
+   taller than the screen anyway, --pin-height (lib/pin-height) pins it by its bottom edge. */
+@utility pin-scene {
+  --bleed: calc(100lvh - 100svh);
+  position: sticky;
+  top: min(0px, calc(100lvh - var(--pin-height, 100lvh)));
+
+  @media (prefers-reduced-motion: reduce) {
+    --bleed: 0px;
+    position: relative;
+    top: auto;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

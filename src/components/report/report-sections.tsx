@@ -163,15 +163,15 @@ export function ReportSegments() {
 
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
-          <h3 className="flex items-center gap-3 font-heading type-title font-semibold">
-            <span aria-hidden className="size-2.5 rounded-full bg-go" />
+          <h3 className="flex gap-3 font-heading type-title font-semibold">
+            <span aria-hidden className="mt-[calc(0.5lh-0.3125rem)] size-2.5 shrink-0 rounded-full bg-go" />
             {segments.top.title}
           </h3>
           <FigureList rows={pairs(segments.top.items)} className="mt-4" />
         </div>
         <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
-          <h3 className="flex items-center gap-3 font-heading type-title font-semibold">
-            <span aria-hidden className="h-0.5 w-5 bg-stop" />
+          <h3 className="flex gap-3 font-heading type-title font-semibold">
+            <span aria-hidden className="mt-[calc(0.5lh-1px)] h-0.5 w-5 shrink-0 bg-stop" />
             {segments.low.title}
           </h3>
           <FigureList rows={pairs(segments.low.items)} className="mt-4" />
@@ -261,8 +261,8 @@ export function ReportResources() {
         <SubHeading>{comparison.title}</SubHeading>
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
-            <h4 className="flex items-center gap-2.5 font-heading text-lg font-semibold">
-              <span aria-hidden className="h-0.5 w-4 bg-stop" />
+            <h4 className="flex gap-2.5 font-heading text-lg font-semibold">
+              <span aria-hidden className="mt-[calc(0.5lh-1px)] h-0.5 w-4 shrink-0 bg-stop" />
               {comparison.traditional.title}
             </h4>
             <FigureList
@@ -272,8 +272,8 @@ export function ReportResources() {
             />
           </div>
           <div className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
-            <h4 className="flex items-center gap-2.5 font-heading text-lg font-semibold">
-              <span aria-hidden className="size-2 rounded-full bg-go" />
+            <h4 className="flex gap-2.5 font-heading text-lg font-semibold">
+              <span aria-hidden className="mt-[calc(0.5lh-0.25rem)] size-2 shrink-0 rounded-full bg-go" />
               {comparison.ai.title}
             </h4>
             <FigureList rows={pairs(comparison.ai.rows)} total={comparison.ai.total as [string, string]} className="mt-4" />
@@ -299,16 +299,16 @@ export function ReportResources() {
 export function ReportAiVsHuman() {
   const report = aiVsHumanReport
   const sides = [
-    { side: report.human, marker: "size-3 rounded-[3px] bg-chart-human" },
-    { side: report.ai, marker: "size-3 rounded-[3px] bg-chart-ai" },
+    { side: report.human, marker: "bg-chart-human" },
+    { side: report.ai, marker: "bg-chart-ai" },
   ]
   return (
     <ReportSection id="ai-vs-human" tone="deep" title={report.title} lead={report.lead}>
       <div className="grid gap-6 lg:grid-cols-2">
         {sides.map(({ side, marker }) => (
           <div key={side.title} className="rounded-[1.25rem] bg-background p-6 ring-1 ring-border md:p-8">
-            <h3 className="flex items-center gap-3 font-heading type-title font-semibold">
-              <span aria-hidden className={marker} />
+            <h3 className="flex gap-3 font-heading type-title font-semibold">
+              <span aria-hidden className={cn("mt-[calc(0.5lh-0.375rem)] size-3 shrink-0 rounded-[3px]", marker)} />
               {side.title}
             </h3>
             <p className="mt-1 text-muted-foreground">{side.subtitle}</p>
