@@ -24,7 +24,15 @@ export function SplitReveal({ as = "h2", children, ...props }: SplitRevealProps)
           onSplit: (self) => {
             // Line masks clip at the line box, and tight display leading puts descenders (g, y) outside it:
             // widen each mask without moving the layout, then hand back the plain heading once the lines are in.
-            gsap.set(self.masks, { paddingTop: "0.16em", paddingBottom: "0.16em", marginTop: "-0.16em", marginBottom: "-0.16em" })
+            // Adjacent vertical margins collapse, so each gap between two masks takes one -0.32em margin rather
+            // than two -0.16em ones (which would collapse to -0.16em and grow the heading until the revert).
+            gsap.set(self.masks, {
+              paddingTop: "0.16em",
+              paddingBottom: "0.16em",
+              marginTop: (index: number) => (index === 0 ? "-0.16em" : "-0.32em"),
+              marginBottom: (index: number, _mask: Element, masks: Element[]) =>
+                index === masks.length - 1 ? "-0.16em" : "0em",
+            })
             return gsap.from(self.lines, {
               yPercent: 125,
               duration: 1.15,

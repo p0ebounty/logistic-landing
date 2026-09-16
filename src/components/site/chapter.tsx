@@ -104,8 +104,8 @@ export function ProblemBlock({
 }) {
   return (
     <div className={cn("flex flex-col gap-5", className)}>
-      <h3 className="flex items-center gap-3 font-heading text-base font-semibold text-stop">
-        <span aria-hidden className="h-0.5 w-6 bg-stop" />
+      <h3 className="flex gap-3 font-heading text-base font-semibold text-stop">
+        <span aria-hidden className="mt-[calc(0.5lh-1px)] h-0.5 w-6 shrink-0 bg-stop" />
         {title}
       </h3>
       <div className="flex max-w-[36rem] flex-col gap-4">{children}</div>
@@ -116,8 +116,8 @@ export function ProblemBlock({
 export function SystemBlock({ title, items, className }: { title: string; items: React.ReactNode[]; className?: string }) {
   return (
     <div className={cn("rounded-[1.5rem] bg-paper-deep p-6 md:p-9", className)}>
-      <h3 className="flex items-center gap-3 font-heading text-base font-semibold text-go">
-        <span aria-hidden className="h-0.5 w-6 bg-go" />
+      <h3 className="flex gap-3 font-heading text-base font-semibold text-go">
+        <span aria-hidden className="mt-[calc(0.5lh-1px)] h-0.5 w-6 shrink-0 bg-go" />
         {title}
       </h3>
       <MarkerList tone="go" items={items} className="mt-5" />

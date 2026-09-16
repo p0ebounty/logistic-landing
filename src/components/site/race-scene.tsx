@@ -3,6 +3,7 @@
 import * as React from "react"
 
 import { gsap, MOTION, useGSAP } from "@/lib/gsap"
+import { observePinHeight } from "@/lib/pin-height"
 
 const hoursFormat = new Intl.NumberFormat("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 })
 const countFormat = new Intl.NumberFormat("en-US")
@@ -21,6 +22,7 @@ export function RaceScene({ children }: { children: React.ReactNode }) {
       if (!root) return
       const mm = gsap.matchMedia()
       mm.add(MOTION, () => {
+        const panel = root.querySelector<HTMLElement>("[data-race-panel]")
         const runway = root.querySelector<HTMLElement>("[data-race-runway]")
         const rows = gsap.utils.toArray<HTMLElement>("[data-race-row]", root).map((row) => ({
           hours: Number(row.dataset.hours),
@@ -29,7 +31,8 @@ export function RaceScene({ children }: { children: React.ReactNode }) {
           hoursText: row.querySelector<HTMLElement>("[data-race-hours]"),
           contactsText: row.querySelector<HTMLElement>("[data-race-contacts]"),
         }))
-        if (!runway || rows.length === 0) return
+        if (!panel || !runway || rows.length === 0) return
+        const stopPinHeight = observePinHeight(panel)
 
         const originals = rows.map((row) => [row.hoursText?.textContent, row.contactsText?.textContent])
         const fastest = Math.min(...rows.map((row) => row.hours))
@@ -59,6 +62,7 @@ export function RaceScene({ children }: { children: React.ReactNode }) {
         render()
 
         return () => {
+          stopPinHeight()
           rows.forEach((row, index) => {
             if (row.bar) row.bar.style.width = "100%"
             if (row.hoursText) row.hoursText.textContent = originals[index][0] ?? ""

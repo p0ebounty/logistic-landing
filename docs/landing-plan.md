@@ -52,6 +52,7 @@ Ground truth text: `docs/old-site-content.txt`. Check with `node scripts/content
 ```
 [header: logo · Challenges · AI vs human · Pricing · Packages · Why MagnaQore · Pilot · Book a call]
 HERO        paper with a giant "30" cut out of it over the night interchange; headline, standfirst, CTAs
+            (phones: the "30" fills what the copy leaves of the first screen) · Autoplay button while at the top
             scroll → fly into the zero until the road fills the screen → 4 stats rise over the photo
 OVERVIEW    thesis · video window opening on scroll · principles · 5 facts in condensed numerals · result + CTA
 WHO         sticky heading | 8 pains read like a teleprompter, sodium marker follows the reader · "Important"
@@ -65,7 +66,7 @@ WHY         7 reasons as sticky cards that pile up · night result card
 PILOT       the dawn highway opens from a window to full screen under the question · offer · CTA · sign-off
 ```
 
-**Motion.** GSAP (ScrollTrigger, SplitText, `useGSAP`) with Lenis smooth scrolling on the GSAP ticker; the official GSAP skills and the cinematic motion skill live in `.claude/skills`. Scenes are client wrappers (`src/components/motion`, `src/components/site/*-scene.tsx`) around server-rendered markup that already holds the final state, so SSR, crawlers, no-JS (a noscript style hides `data-scene-runway`) and reduced motion all get complete content. Reduced motion: no smooth scroll, no pins or scrubs. Phones keep the vertical versions (no horizontal track or card stack, product screens inline). Headlines reveal by masked lines once; nothing else fades in for its own sake.
+**Motion.** GSAP (ScrollTrigger, SplitText, `useGSAP`) with Lenis smooth scrolling on the GSAP ticker; the official GSAP skills and the cinematic motion skill live in `.claude/skills`. Scenes are client wrappers (`src/components/motion`, `src/components/site/*-scene.tsx`) around server-rendered markup that already holds the final state, so SSR, crawlers, no-JS (a noscript style hides `data-scene-runway`) and reduced motion all get complete content. Pinned panels (`pin-scene`) fill the large viewport and keep their content inside the small one, so nothing hides under mobile browser bars; a panel taller than a phone screen pins by its bottom edge. Autoplay, offered whenever the page is at its top, scrolls the whole page at about a third of a screen per second; any wheel, touch, key or click takes control back. Reduced motion: no smooth scroll, no autoplay, no pins or scrubs. Phones keep the vertical versions (no horizontal track or card stack, product screens inline). Headlines reveal by masked lines once; nothing else fades in for its own sake.
 
 ## Generated imagery (kie.ai, gpt-image-2-5-flare)
 

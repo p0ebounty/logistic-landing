@@ -83,8 +83,8 @@ export function AnalyticsChapter() {
 
       <ChapterStep screen={dashboardScreen}>
         <div>
-          <h3 className="flex items-center gap-3 font-heading text-base font-semibold text-go">
-            <span aria-hidden className="h-0.5 w-6 bg-go" />
+          <h3 className="flex gap-3 font-heading text-base font-semibold text-go">
+            <span aria-hidden className="mt-[calc(0.5lh-1px)] h-0.5 w-6 shrink-0 bg-go" />
             {analytics.providesTitle}
           </h3>
           <div className="mt-6">

@@ -9,6 +9,9 @@ import { Button } from "@/components/ui/button"
 import { hero } from "@/content/landing"
 import { cn } from "@/lib/utils"
 
+/** Slimmer hero buttons on phones leave more of the first screen to the "30". */
+const COMPACT_ON_PHONES = "max-sm:min-h-12 max-sm:py-2.5 max-sm:text-[0.95rem]"
+
 export function Hero() {
   const common = { alt: "", fill: true, sizes: "100vw" }
   const {
@@ -24,7 +27,7 @@ export function Hero() {
           (lighten blend over the photo) and lines up with the copy at every width without measuring. */}
       <div
         data-hero-stage
-        className="sticky top-0 isolate grid min-h-svh grid-cols-1 grid-rows-[auto_auto_auto_minmax(12rem,1fr)] overflow-hidden bg-night motion-reduce:relative lg:h-svh lg:min-h-[44rem] lg:grid-rows-[auto_minmax(2rem,1fr)_auto_auto]"
+        className="pin-scene isolate grid min-h-lvh grid-cols-1 grid-rows-[auto_auto_auto_minmax(0,1fr)_var(--bleed)] overflow-hidden bg-night motion-reduce:min-h-svh lg:h-lvh lg:min-h-[calc(44rem+var(--bleed))] lg:grid-rows-[auto_minmax(2rem,1fr)_auto_auto_var(--bleed)] motion-reduce:lg:h-svh"
       >
         <picture>
           <source media="(min-width: 48rem)" srcSet={wideSrcSet} />
@@ -46,12 +49,16 @@ export function Hero() {
           data-hero-paper
           className="relative col-start-1 row-span-full grid grid-rows-subgrid bg-paper mix-blend-lighten"
         >
-          <span
-            data-hero-number
-            className="row-start-4 self-end justify-self-center pb-[3svh] font-heading text-[min(62vw,42svh)] leading-[0.8] font-black tracking-[-0.03em] text-black stretch-125 lg:row-span-4 lg:row-start-1 lg:self-center lg:justify-self-end lg:pr-[3vw] lg:pb-0 lg:text-[min(37vw,76svh)]"
-          >
-            3<span data-hero-zero>0</span>
-          </span>
+          {/* On phones the number takes whatever height the copy leaves on the first screen: its box is a size
+              container, so the "30" scales to fit instead of running off the bottom. */}
+          <div className="row-start-4 grid pb-[3svh] [container-type:size] lg:row-span-4 lg:row-start-1 lg:pb-0">
+            <span
+              data-hero-number
+              className="self-end justify-self-center font-heading text-[length:min(62cqw,125cqh)] leading-[0.8] font-black tracking-[-0.03em] text-black stretch-125 lg:self-center lg:justify-self-end lg:pr-[3vw] lg:text-[length:min(37vw,76svh)]"
+            >
+              3<span data-hero-zero>0</span>
+            </span>
+          </div>
         </div>
 
         <div data-hero-copy className="shell relative col-start-1 row-span-full grid grid-rows-subgrid">
@@ -59,17 +66,17 @@ export function Hero() {
             id="hero-title"
             className={cn(
               typeRole.hero,
-              "row-start-1 max-w-[15ch] pt-[calc(var(--header-height)+1.75rem)] lg:max-w-[12.5ch] lg:pt-[calc(var(--header-height)+3.5rem)]"
+              "row-start-1 max-w-[15ch] pt-[calc(var(--header-height)+1rem)] sm:pt-[calc(var(--header-height)+1.75rem)] lg:max-w-[12.5ch] lg:pt-[calc(var(--header-height)+3.5rem)]"
             )}
           >
             {hero.title}
           </h1>
-          <p className="row-start-2 mt-5 max-w-[31rem] type-lead text-graphite lg:row-start-3 lg:mt-0">
+          <p className="row-start-2 mt-4 max-w-[31rem] type-lead text-graphite sm:mt-5 lg:row-start-3 lg:mt-0">
             {hero.standfirst}
           </p>
-          <div className="row-start-3 mt-7 flex flex-wrap items-center gap-3 pb-6 lg:row-start-4 lg:mt-8 lg:pb-12">
-            <BookingLink />
-            <Button asChild size="xl" variant="outline">
+          <div className="row-start-3 mt-6 flex flex-wrap items-center gap-2.5 pb-5 sm:mt-7 sm:gap-3 sm:pb-6 lg:row-start-4 lg:mt-8 lg:pb-12">
+            <BookingLink className={COMPACT_ON_PHONES} />
+            <Button asChild size="xl" variant="outline" className={COMPACT_ON_PHONES}>
               <a href="#overview">
                 <PlayIcon data-icon="inline-start" aria-hidden />
                 {hero.secondaryAction}

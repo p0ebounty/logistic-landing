@@ -3,6 +3,7 @@
 import * as React from "react"
 
 import { gsap, MOTION, useGSAP } from "@/lib/gsap"
+import { observePinHeight } from "@/lib/pin-height"
 
 /** Opening scene: scrolling flies into the "30" until the night road fills the screen, then the stats rise over it. */
 export function HeroScene({ children }: { children: React.ReactNode }) {
@@ -21,15 +22,23 @@ export function HeroScene({ children }: { children: React.ReactNode }) {
         if (!stage || !paper || !zero || !runway || !stats) return
 
         // Offsets ignore transforms, so the zoom point stays inside the zero's stroke on every refresh.
-        const origin = () => ({
-          x: zero.offsetLeft + zero.offsetWidth * 0.2,
-          y: zero.offsetTop + zero.offsetHeight * 0.5,
-        })
+        // They are summed up to the paper, whatever positioned boxes sit in between.
+        const origin = () => {
+          let x = zero.offsetWidth * 0.2
+          let y = zero.offsetHeight * 0.5
+          for (let node: HTMLElement | null = zero; node && node !== paper; node = node.offsetParent as HTMLElement | null) {
+            x += node.offsetLeft
+            y += node.offsetTop
+          }
+          return { x, y }
+        }
         const endScale = () => {
           const { x, y } = origin()
           const reach = Math.hypot(Math.max(x, stage.clientWidth - x), Math.max(y, stage.clientHeight - y))
-          return reach / (zero.offsetHeight * 0.06)
+          // A zero squeezed small by a very short screen still ends the zoom, without an absurd scale.
+          return Math.min(reach / Math.max(zero.offsetHeight * 0.06, 1), 160)
         }
+        const stopPinHeight = observePinHeight(stage)
 
         gsap
           .timeline({
@@ -59,6 +68,8 @@ export function HeroScene({ children }: { children: React.ReactNode }) {
           ease: "power2.out",
           scrollTrigger: { trigger: stats, start: "top 80%", end: "top 20%", scrub: 0.5 },
         })
+
+        return stopPinHeight
       })
     },
     { scope: root }
