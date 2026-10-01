@@ -5,8 +5,8 @@
 # meta description: The only AI system that transforms logistical chaos into a manageable sales pipeline in 30 days. Build an AI sales department for your logistics company.
 # meta keywords: AI logistics, sales automation, logistics CRM, AI sales department, MagnaQore
 # CTA (6x "Book Your Free Strategy Call Now"): https://cal.com/ina-nistoras/magnaqore-logistic
-# Example report link: https://claude.ai/public/artifacts/daa309ac-3aad-4e58-870c-9fc4e89d12ae
-# Video: https://www.youtube.com/watch?v=ptQGNL-XdFE ("MagnaQore Logistic Overwiev", Maria Sakovets)
+# Example report link: external report (now rebuilt as /example-report)
+# Video: https://www.youtube.com/watch?v=ptQGNL-XdFE ("MagnaQore Logistic Overwiev")
 # Product screenshots reused: CRM (Clients/Loads/Carriers), linked loads, 4 analytics dashboards, lead-generation report.
 
 MAGNAQORE LOGISTIC

@@ -1,5 +1,5 @@
 // Every piece of copy on the landing. Wording follows the previous landing (docs/old-site-content.txt);
-// the CPO requires that no information is dropped, so edit facts and numbers here with care.
+// no information may be dropped, so edit facts and numbers here with care.
 
 export const SITE_URL = "https://logistic.magnaqore.io"
 export const BOOKING_URL = "https://cal.com/ina-nistoras/magnaqore-logistic"

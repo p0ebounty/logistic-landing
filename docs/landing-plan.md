@@ -5,7 +5,7 @@
 - **Product:** MagnaQore Logistic — AI sales department (AI calling, lead rating, follow-ups, tender deadlines, CRM, analytics) for US and Canadian logistics companies.
 - **Audience:** owners and heads of sales at freight brokerages, 3PLs and carriers.
 - **Primary job:** make the full case (problems → system → AI vs human math → pricing → packages) and get a free strategy call booked on cal.com.
-- **Hard constraints:** keep ≥95% of the old page's content (CPO), easy long-form reading, fully responsive, ready-made components (shadcn/ui on Radix) — no native browser widgets, Next.js 16 + Turbopack, new generated imagery (old covers are not reused; real product screenshots are).
+- **Hard constraints:** keep ≥95% of the old page's content, easy long-form reading, fully responsive, ready-made components (shadcn/ui on Radix) — no native browser widgets, Next.js 16 + Turbopack, new generated imagery (old covers are not reused; real product screenshots are).
 
 ## Old page map (logistic.magnaqore.io, Readdy.ai, ~25,500 px, 21 blocks)
 
@@ -32,7 +32,7 @@ Ground truth text: `docs/old-site-content.txt`. Check with `node scripts/content
 
 ## Design system
 
-**Concept — "Night shift".** Freight moves all night, and so does an AI sales department. The page is calm daylight paper for reading, numbers and decisions, and cuts to night photography of the road wherever it shows scale. The reader's scroll drives the motion: the page is a sequence of scenes rather than a stack of fade-ins. The first version (magnaqore.io colors and fonts, editorial layout) was rejected as unimpressive; this direction is deliberately its own.
+**Concept — "Night shift".** Freight moves all night, and so does an AI sales department. The page is calm daylight paper for reading, numbers and decisions, and cuts to night photography of the road wherever it shows scale. The reader's scroll drives the motion: the page is a sequence of scenes rather than a stack of fade-ins. An earlier editorial direction borrowed magnaqore.io colors and fonts; this one is deliberately its own.
 
 **Color**
 
